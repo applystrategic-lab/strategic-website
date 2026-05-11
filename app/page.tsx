@@ -4,7 +4,6 @@ import Stats from "./components/Stats";
 import Industries from "./components/Industries";
 import Countries from "./components/Countries";
 import WhyChoose from "./components/WhyChoose";
-import FeaturedJobs from "./components/FeaturedJobs";
 import Process from "./components/Process";
 import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
@@ -54,8 +53,6 @@ export default function Home() {
         <Countries />
 
         <WhyChoose />
-
-        <FeaturedJobs />
 
         <Process />
 
