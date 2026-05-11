@@ -4,6 +4,14 @@ export async function POST(req) {
   try {
     const body = await req.json();
 
+    const {
+      name,
+      email,
+      phone,
+      subject,
+      message,
+    } = body;
+
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -14,42 +22,37 @@ export async function POST(req) {
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-
-      to: [
-        "applystrategic@gmail.com",
-        "japanjobsstrategic@gmail.com",
-      ],
-
-      subject: `New Inquiry from ${body.name}`,
-
+      to: process.env.EMAIL_USER,
+      subject: `Contact Form: ${subject}`,
       html: `
-        <h2>New Inquiry</h2>
+        <h2>New Contact Message</h2>
 
-        <p><strong>Name:</strong> ${body.name}</p>
-        <p><strong>Email:</strong> ${body.email}</p>
-
-        <p><strong>Phone:</strong> ${body.phone || "N/A"}</p>
-
-        <p><strong>Subject:</strong> ${body.subject}</p>
-
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Subject:</strong> ${subject}</p>
         <p><strong>Message:</strong></p>
 
-        <p>${body.message}</p>
+        <p>${message}</p>
       `,
     });
 
-    return Response.json({
-      success: true,
-    });
+    return Response.json(
+      { success: true },
+      { status: 200 }
+    );
 
   } catch (error) {
 
     console.log(error);
 
     return Response.json(
-      { success: false },
-      { status: 500 }
+      {
+        error: error.message || "Email failed",
+      },
+      {
+        status: 500,
+      }
     );
-
   }
 }

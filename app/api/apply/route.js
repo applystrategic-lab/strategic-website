@@ -1,57 +1,29 @@
 import nodemailer from "nodemailer";
 
-export const runtime = "nodejs";
-
 export async function POST(req) {
-
   try {
-
     const formData = await req.formData();
 
     const fullName = formData.get("fullName");
     const email = formData.get("email");
     const phone = formData.get("phone");
-    const country = formData.get("country");
     const position = formData.get("position");
     const experience = formData.get("experience");
+    const message = formData.get("message");
 
     const resume = formData.get("resume");
 
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
     let attachments = [];
 
-    // FILE VALIDATION
     if (resume && typeof resume === "object") {
-
-      const allowedTypes = [
-        "application/pdf",
-        "application/msword",
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-      ];
-
-      if (!allowedTypes.includes(resume.type)) {
-
-        return Response.json(
-          {
-            error: "Only PDF and DOC/DOCX files are allowed.",
-          },
-          {
-            status: 400,
-          }
-        );
-      }
-
-      // MAX 5MB
-      if (resume.size > 5 * 1024 * 1024) {
-
-        return Response.json(
-          {
-            error: "Resume file is too large. Maximum is 5MB.",
-          },
-          {
-            status: 400,
-          }
-        );
-      }
 
       const bytes = await resume.arrayBuffer();
 
@@ -63,53 +35,38 @@ export async function POST(req) {
       });
     }
 
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-    });
-
     await transporter.sendMail({
-
       from: process.env.EMAIL_USER,
-
-      to: [
-        process.env.EMAIL_USER,
-        "yoursecondemail@gmail.com",
-      ],
-
-      subject: `New Job Application - ${fullName}`,
-
+      to: process.env.EMAIL_USER,
+      subject: `New Job Application - ${position}`,
       html: `
-        <div style="font-family: Arial; padding:20px;">
+        <h2>New Applicant</h2>
 
-          <h2>New Applicant</h2>
+        <p><strong>Full Name:</strong> ${fullName}</p>
 
-          <p><strong>Full Name:</strong> ${fullName}</p>
+        <p><strong>Email:</strong> ${email}</p>
 
-          <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
 
-          <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Position Applied:</strong> ${position}</p>
 
-          <p><strong>Preferred Country:</strong> ${country}</p>
+        <p><strong>Experience:</strong> ${experience}</p>
 
-          <p><strong>Position Applied:</strong> ${position}</p>
+        <p><strong>Message:</strong></p>
 
-          <p><strong>Experience:</strong></p>
-
-          <p>${experience}</p>
-
-        </div>
+        <p>${message}</p>
       `,
-
       attachments,
     });
 
-    return Response.json({
-      success: true,
-    });
+    return Response.json(
+      {
+        success: true,
+      },
+      {
+        status: 200,
+      }
+    );
 
   } catch (error) {
 
@@ -117,7 +74,7 @@ export async function POST(req) {
 
     return Response.json(
       {
-        error: "Failed to send application",
+        error: error.message || "Failed to submit application.",
       },
       {
         status: 500,
