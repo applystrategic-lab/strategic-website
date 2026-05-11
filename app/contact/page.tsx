@@ -327,8 +327,6 @@ export default function ContactPage() {
 
                   <p className="text-gray-600 leading-relaxed">
                     applystrategic@gmail.com
-                    <br />
-                    japanjobsstrategic@gmail.com
                   </p>
                 </div>
 
