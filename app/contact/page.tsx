@@ -286,7 +286,7 @@ setTimeout(() => {
                   <p className="text-gray-600 leading-relaxed">
                     Monday - Friday
                     <br />
-                    8:00 AM - 5:00 PM
+                    9:00 AM - 6:00 PM
                   </p>
                 </div>
 
