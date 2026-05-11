@@ -45,7 +45,7 @@ export default function Navbar() {
             duration-500
             rounded-2xl
             lg:rounded-3xl
-            px-5
+            px-4
             sm:px-6
             lg:px-10
             py-4
@@ -90,10 +90,10 @@ export default function Navbar() {
             {/* LOGO */}
             <Link
               href="/"
-              className="flex items-center gap-3 sm:gap-4 shrink-0"
+              className="flex items-center gap-2 sm:gap-4 shrink-0 min-w-0"
             >
 
-              <div className="relative w-12.5 h-12.5 sm:w-13.75 sm:h-13.75 transition-transform duration-300 hover:scale-110">
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 shrink-0 transition-transform duration-300 hover:scale-110">
 
                 <img
                   src="/images/logo.png"
@@ -108,13 +108,13 @@ export default function Navbar() {
 
               </div>
 
-              <div>
+              <div className="min-w-0">
 
-                <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white tracking-wide leading-none">
+                <h1 className="text-lg sm:text-2xl md:text-3xl font-bold text-white tracking-wide leading-none whitespace-nowrap">
                   STRATEGIC
                 </h1>
 
-                <p className="hidden sm:block text-[8px] uppercase tracking-[4px] text-gray-300 mt-1">
+                <p className="text-[6px] sm:text-[8px] uppercase tracking-[2px] sm:tracking-[4px] text-gray-300 mt-1 whitespace-nowrap">
                   International Manpower Services Inc.
                 </p>
 
@@ -154,37 +154,37 @@ export default function Navbar() {
                 </Link>
               ))}
 
-            {/* CTA BUTTON */}
-<Link
-  href="/apply"
-  className="
-    relative
-    overflow-hidden
-    bg-[#D4A017]
-    hover:bg-[#b88a12]
-    text-white
-    px-7
-    py-3.5
-    rounded-xl
-    text-sm
-    uppercase
-    tracking-[2px]
-    font-semibold
-    transition-all
-    duration-300
-    hover:scale-105
-    shadow-[0_8px_25px_rgba(212,160,23,0.35)]
-    hover:shadow-[0_12px_40px_rgba(212,160,23,0.45)]
-  "
->
+              {/* CTA BUTTON */}
+              <Link
+                href="/apply"
+                className="
+                  relative
+                  overflow-hidden
+                  bg-[#D4A017]
+                  hover:bg-[#b88a12]
+                  text-white
+                  px-7
+                  py-3.5
+                  rounded-xl
+                  text-sm
+                  uppercase
+                  tracking-[2px]
+                  font-semibold
+                  transition-all
+                  duration-300
+                  hover:scale-105
+                  shadow-[0_8px_25px_rgba(212,160,23,0.35)]
+                  hover:shadow-[0_12px_40px_rgba(212,160,23,0.45)]
+                "
+              >
 
-  <span className="relative z-10">
-    Apply Now
-  </span>
+                <span className="relative z-10">
+                  Apply Now
+                </span>
 
-  <div className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition duration-300" />
+                <div className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-100 transition duration-300" />
 
-</Link>
+              </Link>
 
             </nav>
 
@@ -197,6 +197,8 @@ export default function Navbar() {
                 duration-300
                 hover:text-[#D4A017]
                 hover:scale-110
+                ml-3
+                shrink-0
               "
               onClick={() => setIsOpen(!isOpen)}
             >
