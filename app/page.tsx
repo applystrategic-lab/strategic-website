@@ -1,7 +1,6 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Stats from "./components/Stats";
-import Industries from "./components/Industries";
 import Countries from "./components/Countries";
 import WhyChoose from "./components/WhyChoose";
 import Process from "./components/Process";
@@ -44,8 +43,6 @@ export default function Home() {
         <StatsSection />
 
         <Testimonials />
-
-        <Industries />
 
         <Countries />
 

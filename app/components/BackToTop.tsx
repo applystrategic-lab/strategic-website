@@ -92,7 +92,7 @@ export default function BackToTop() {
                 group-hover:opacity-100
                 transition-all
                 duration-700
-                bg-gradient-to-tr
+                bg-linear-to-tr
                 from-transparent
                 via-white/20
                 to-transparent
