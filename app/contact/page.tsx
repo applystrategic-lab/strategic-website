@@ -206,9 +206,7 @@ setTimeout(() => {
                   </h3>
 
                   <p className="text-gray-600 leading-relaxed">
-                    1370-E Garden Plaza Hotel Bldg.,
-                    General Luna St., Paco, Manila,
-                    Philippines
+                    Unit GF-01 Garden Plaza Hotel, #1370E Gen. Luna St., Paco, Manila.
                   </p>
                 </div>
 
