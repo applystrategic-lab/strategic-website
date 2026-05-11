@@ -14,13 +14,24 @@ export async function POST(req) {
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
+
+      to: [
+        "applystrategic@gmail.com",
+        "japanjobsstrategic@gmail.com",
+      ],
+
       subject: `New Inquiry from ${body.name}`,
+
       html: `
         <h2>New Inquiry</h2>
 
         <p><strong>Name:</strong> ${body.name}</p>
         <p><strong>Email:</strong> ${body.email}</p>
+
+        <p><strong>Phone:</strong> ${body.phone || "N/A"}</p>
+
+        <p><strong>Subject:</strong> ${body.subject}</p>
+
         <p><strong>Message:</strong></p>
 
         <p>${body.message}</p>
@@ -32,11 +43,13 @@ export async function POST(req) {
     });
 
   } catch (error) {
+
     console.log(error);
 
     return Response.json(
       { success: false },
       { status: 500 }
     );
+
   }
 }
