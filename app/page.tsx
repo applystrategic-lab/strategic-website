@@ -10,7 +10,6 @@ import CTA from "./components/CTA";
 import Footer from "./components/Footer";
 import AboutSection from "./components/AboutSection";
 import RecruitmentProcess from "./components/RecruitmentProcess";
-import JobOpportunities from "./components/JobOpportunities";
 import StatsSection from "./components/StatsSection";
 import BackToTop from "./components/BackToTop";
 
@@ -41,8 +40,6 @@ export default function Home() {
         <AboutSection />
 
         <RecruitmentProcess />
-
-        <JobOpportunities />
 
         <StatsSection />
 
