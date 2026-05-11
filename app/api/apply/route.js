@@ -2,6 +2,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
+
     const formData = await req.formData();
 
     const fullName = formData.get("fullName");
@@ -13,7 +14,7 @@ export async function POST(req) {
 
     const resume = formData.get("resume");
 
-    // NEW PASSPORT FIELD
+    // PASSPORT FILE
     const passport = formData.get("passport");
 
     const transporter = nodemailer.createTransport({
@@ -55,7 +56,9 @@ export async function POST(req) {
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
+
       subject: `New Job Application - ${position}`,
+
       html: `
         <h2>New Applicant</h2>
 
@@ -77,6 +80,7 @@ export async function POST(req) {
 
         <p><strong>Passport Copy:</strong> Attached</p>
       `,
+
       attachments,
     });
 

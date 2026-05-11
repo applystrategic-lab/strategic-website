@@ -255,6 +255,39 @@ const handleSubmit = async (
 
 </div>
 
+{/* PASSPORT UPLOAD */}
+<div>
+  <label className="block text-white mb-2 font-medium">
+    Upload Passport Copy
+  </label>
+
+  <input
+    type="file"
+    name="passport"
+    accept=".jpg,.jpeg,.png,.pdf"
+    required
+    className="
+      w-full
+      p-4
+      rounded-xl
+      bg-white/10
+      border
+      border-white/10
+      text-white
+      file:bg-[#D4A017]
+      file:border-0
+      file:text-white
+      file:px-4
+      file:py-2
+      file:rounded-lg
+      file:mr-4
+      hover:border-[#D4A017]
+      transition-all
+      duration-300
+    "
+  />
+</div>
+
             <button
               type="submit"
               disabled={loading}
