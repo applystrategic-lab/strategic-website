@@ -249,31 +249,6 @@ export default function Navbar() {
                   </Link>
                 ))}
 
-                <Link
-                  href="/jobs"
-                  onClick={() => setIsOpen(false)}
-                  className="
-                    relative
-                    overflow-hidden
-                    bg-[#D4A017]
-                    hover:bg-[#b88a12]
-                    text-white
-                    px-6
-                    py-3.5
-                    rounded-xl
-                    text-sm
-                    uppercase
-                    tracking-[2px]
-                    font-semibold
-                    transition-all
-                    duration-300
-                    shadow-[0_8px_25px_rgba(212,160,23,0.35)]
-                    text-center
-                  "
-                >
-                  Apply Now
-                </Link>
-
               </div>
 
             </motion.div>
