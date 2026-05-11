@@ -3,7 +3,7 @@
 import Navbar from "../components/Navbar";
 import CTA from "../components/CTA";
 import Footer from "../components/Footer";
-import { motion } from "framer-motion";
+import { motion, number } from "framer-motion";
 import { useState } from "react";
 
 import {
@@ -18,6 +18,7 @@ export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    number: "",
     subject: "",
     message: "",
   });
@@ -63,6 +64,7 @@ setTimeout(() => {
       setFormData({
         name: "",
         email: "",
+        number: "",
         subject: "",
         message: "",
       });
