@@ -354,7 +354,7 @@ export default function ContactPage() {
                       bg-white/10
                       border
                       border-white/10
-                      text-white
+                      text-black
                       outline-none
                       focus:border-[#D4A017]
                       transition-all
