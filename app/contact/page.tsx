@@ -3,7 +3,7 @@
 import Navbar from "../components/Navbar";
 import CTA from "../components/CTA";
 import Footer from "../components/Footer";
-import { motion, number } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
 import {
@@ -15,10 +15,12 @@ import {
 
 export default function ContactPage() {
 
+  const [countryCode, setCountryCode] = useState("+63");
+  const [phoneNumber, setPhoneNumber] = useState("");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    number: "",
     subject: "",
     message: "",
   });
@@ -27,8 +29,8 @@ export default function ContactPage() {
   const [success, setSuccess] = useState(false);
 
   const handleChange = (
-  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-) => {
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -36,52 +38,56 @@ export default function ContactPage() {
   };
 
   const handleSubmit = async (
-  e: React.FormEvent<HTMLFormElement>
-) => {
-  e.preventDefault();
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
 
-  setLoading(true);
+    setLoading(true);
 
-  try {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    const data = await res.json();
-
-    if (res.ok) {
-
-      setSuccess(true);
-
-setTimeout(() => {
-  setSuccess(false);
-}, 3000);
-
-      setFormData({
-        name: "",
-        email: "",
-        number: "",
-        subject: "",
-        message: "",
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          phone: `${countryCode} ${phoneNumber}`,
+        }),
       });
 
-    } else {
+      const data = await res.json();
 
-      alert(data.error || "Something went wrong.");
+      if (res.ok) {
 
+        setSuccess(true);
+
+        setTimeout(() => {
+          setSuccess(false);
+        }, 3000);
+
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+
+        setPhoneNumber("");
+
+      } else {
+
+        alert(data.error || "Something went wrong.");
+
+      }
+
+    } catch (error) {
+      console.log(error);
+      alert("Failed to send message.");
     }
 
-  } catch (error) {
-    console.log(error);
-    alert("Failed to send message.");
-  }
-
-  setLoading(false);
-};
+    setLoading(false);
+  };
 
   return (
     <main className="bg-[#F8FAFC]">
@@ -89,35 +95,35 @@ setTimeout(() => {
       <Navbar />
 
       {success && (
-  <motion.div
-    initial={{ opacity: 0, y: -40 }}
-    animate={{ opacity: 1, y: 0 }}
-    exit={{ opacity: 0, y: -40 }}
-    transition={{ duration: 0.4 }}
-    className="
-      fixed
-      top-28
-      right-6
-      z-50
-      bg-[#0B1F3A]
-      border
-      border-[#D4A017]/30
-      rounded-2xl
-      px-6
-      py-5
-      shadow-2xl
-      backdrop-blur-xl
-    "
-  >
-    <h3 className="text-[#D4A017] font-bold text-lg mb-1">
-      Success
-    </h3>
+        <motion.div
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -40 }}
+          transition={{ duration: 0.4 }}
+          className="
+            fixed
+            top-28
+            right-6
+            z-50
+            bg-[#0B1F3A]
+            border
+            border-[#D4A017]/30
+            rounded-2xl
+            px-6
+            py-5
+            shadow-2xl
+            backdrop-blur-xl
+          "
+        >
+          <h3 className="text-[#D4A017] font-bold text-lg mb-1">
+            Success
+          </h3>
 
-    <p className="text-gray-300 text-sm">
-      Your message has been sent successfully.
-    </p>
-  </motion.div>
-)}
+          <p className="text-gray-300 text-sm">
+            Your message has been sent successfully.
+          </p>
+        </motion.div>
+      )}
 
       {/* HERO */}
       <section className="relative h-[55vh] bg-[#0B1F3A] flex items-center justify-center overflow-hidden">
@@ -234,7 +240,6 @@ setTimeout(() => {
 
                   <p className="text-gray-600 leading-relaxed">
                     +63 915 764 4053
-              
                   </p>
                 </div>
 
@@ -332,6 +337,80 @@ setTimeout(() => {
                 required
                 className="w-full p-4 rounded-xl bg-white/10 border border-white/10 text-white placeholder-gray-300 outline-none focus:border-[#D4A017] transition-all duration-300"
               />
+
+              {/* PHONE NUMBER FIELD */}
+              <div className="flex flex-col sm:flex-row gap-4">
+
+                {/* COUNTRY SELECT */}
+                <div className="sm:w-65">
+
+                  <select
+                    value={countryCode}
+                    onChange={(e) => setCountryCode(e.target.value)}
+                    className="
+                      w-full
+                      p-4
+                      rounded-xl
+                      bg-white/10
+                      border
+                      border-white/10
+                      text-white
+                      outline-none
+                      focus:border-[#D4A017]
+                      transition-all
+                      duration-300
+                    "
+                  >
+                    <option value="+63">🇵🇭 Philippines (+63)</option>
+                    <option value="+81">🇯🇵 Japan (+81)</option>
+                    <option value="+82">🇰🇷 Korea (+82)</option>
+                    <option value="+886">🇹🇼 Taiwan (+886)</option>
+                    <option value="+971">🇦🇪 UAE (+971)</option>
+                    <option value="+974">🇶🇦 Qatar (+974)</option>
+                    <option value="+966">🇸🇦 Saudi Arabia (+966)</option>
+                    <option value="+1">🇺🇸 USA (+1)</option>
+                    <option value="+61">🇦🇺 Australia (+61)</option>
+                  </select>
+
+                </div>
+
+                {/* PHONE INPUT */}
+                <div className="relative flex-1">
+
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-white pointer-events-none">
+                    {countryCode}
+                  </div>
+
+                  <input
+                    type="tel"
+                    value={phoneNumber}
+                    onChange={(e) =>
+                      setPhoneNumber(
+                        e.target.value.replace(/[^0-9]/g, "")
+                      )
+                    }
+                    placeholder="9123456789"
+                    required
+                    className="
+                      w-full
+                      p-4
+                      pl-20
+                      rounded-xl
+                      bg-white/10
+                      border
+                      border-white/10
+                      text-white
+                      placeholder-gray-300
+                      outline-none
+                      focus:border-[#D4A017]
+                      transition-all
+                      duration-300
+                    "
+                  />
+
+                </div>
+
+              </div>
 
               <input
                 type="text"
