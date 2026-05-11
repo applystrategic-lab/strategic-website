@@ -22,11 +22,11 @@ export default function Home() {
       {/* GLOBAL BACKGROUND GLOW */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
 
-        <div className="absolute top-[5%] left-[-200px] w-[500px] h-[500px] bg-[#D4A017]/10 rounded-full blur-3xl" />
+        <div className="absolute top-[5%] left-50 w-125 h-125 bg-[#D4A017]/10 rounded-full blur-3xl" />
 
-        <div className="absolute top-[35%] right-[-250px] w-[600px] h-[600px] bg-[#1E4E8C]/10 rounded-full blur-3xl" />
+        <div className="absolute top-[35%] right-62.5 w-150 h-150 bg-[#1E4E8C]/10 rounded-full blur-3xl" />
 
-        <div className="absolute bottom-0 left-[20%] w-[500px] h-[500px] bg-[#D4A017]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-[20%] w-125 h-125 bg-[#D4A017]/5 rounded-full blur-3xl" />
 
       </div>
 
