@@ -13,6 +13,9 @@ export async function POST(req) {
 
     const resume = formData.get("resume");
 
+    // NEW PASSPORT FIELD
+    const passport = formData.get("passport");
+
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -23,6 +26,7 @@ export async function POST(req) {
 
     let attachments = [];
 
+    // RESUME ATTACHMENT
     if (resume && typeof resume === "object") {
 
       const bytes = await resume.arrayBuffer();
@@ -31,6 +35,19 @@ export async function POST(req) {
 
       attachments.push({
         filename: resume.name,
+        content: buffer,
+      });
+    }
+
+    // PASSPORT ATTACHMENT
+    if (passport && typeof passport === "object") {
+
+      const bytes = await passport.arrayBuffer();
+
+      const buffer = Buffer.from(bytes);
+
+      attachments.push({
+        filename: passport.name,
         content: buffer,
       });
     }
@@ -55,6 +72,10 @@ export async function POST(req) {
         <p><strong>Message:</strong></p>
 
         <p>${message}</p>
+
+        <p><strong>Resume:</strong> Attached</p>
+
+        <p><strong>Passport Copy:</strong> Attached</p>
       `,
       attachments,
     });
