@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import CTA from "../components/CTA";
 import Footer from "../components/Footer";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 
 import {
   Mail,
@@ -15,8 +15,74 @@ import {
 
 export default function ContactPage() {
 
+  const countries = useMemo(() => [
+    { name: "Afghanistan", code: "+93", format: "701234567" },
+    { name: "Albania", code: "+355", format: "671234567" },
+    { name: "Algeria", code: "+213", format: "551234567" },
+    { name: "Argentina", code: "+54", format: "91123456789" },
+    { name: "Australia", code: "+61", format: "412345678" },
+    { name: "Austria", code: "+43", format: "664123456" },
+    { name: "Bangladesh", code: "+880", format: "1712345678" },
+    { name: "Belgium", code: "+32", format: "471234567" },
+    { name: "Brazil", code: "+55", format: "11912345678" },
+    { name: "Cambodia", code: "+855", format: "91234567" },
+    { name: "Canada", code: "+1", format: "2015550123" },
+    { name: "China", code: "+86", format: "13123456789" },
+    { name: "Colombia", code: "+57", format: "3123456789" },
+    { name: "Denmark", code: "+45", format: "20123456" },
+    { name: "Egypt", code: "+20", format: "1012345678" },
+    { name: "Finland", code: "+358", format: "401234567" },
+    { name: "France", code: "+33", format: "612345678" },
+    { name: "Germany", code: "+49", format: "15123456789" },
+    { name: "Greece", code: "+30", format: "6912345678" },
+    { name: "Hong Kong", code: "+852", format: "51234567" },
+    { name: "India", code: "+91", format: "9123456789" },
+    { name: "Indonesia", code: "+62", format: "81234567890" },
+    { name: "Ireland", code: "+353", format: "851234567" },
+    { name: "Israel", code: "+972", format: "501234567" },
+    { name: "Italy", code: "+39", format: "3123456789" },
+    { name: "Japan", code: "+81", format: "9012345678" },
+    { name: "Jordan", code: "+962", format: "791234567" },
+    { name: "Kazakhstan", code: "+7", format: "7011234567" },
+    { name: "Korea", code: "+82", format: "1012345678" },
+    { name: "Kuwait", code: "+965", format: "51234567" },
+    { name: "Laos", code: "+856", format: "2091234567" },
+    { name: "Malaysia", code: "+60", format: "123456789" },
+    { name: "Mexico", code: "+52", format: "5512345678" },
+    { name: "Myanmar", code: "+95", format: "912345678" },
+    { name: "Nepal", code: "+977", format: "9812345678" },
+    { name: "Netherlands", code: "+31", format: "612345678" },
+    { name: "New Zealand", code: "+64", format: "211234567" },
+    { name: "Nigeria", code: "+234", format: "8012345678" },
+    { name: "Norway", code: "+47", format: "41234567" },
+    { name: "Pakistan", code: "+92", format: "3012345678" },
+    { name: "Philippines", code: "+63", format: "9123456789" },
+    { name: "Poland", code: "+48", format: "512345678" },
+    { name: "Portugal", code: "+351", format: "912345678" },
+    { name: "Qatar", code: "+974", format: "33123456" },
+    { name: "Romania", code: "+40", format: "712345678" },
+    { name: "Russia", code: "+7", format: "9123456789" },
+    { name: "Saudi Arabia", code: "+966", format: "512345678" },
+    { name: "Singapore", code: "+65", format: "81234567" },
+    { name: "South Africa", code: "+27", format: "821234567" },
+    { name: "Spain", code: "+34", format: "612345678" },
+    { name: "Sri Lanka", code: "+94", format: "712345678" },
+    { name: "Sweden", code: "+46", format: "701234567" },
+    { name: "Switzerland", code: "+41", format: "781234567" },
+    { name: "Taiwan", code: "+886", format: "912345678" },
+    { name: "Thailand", code: "+66", format: "812345678" },
+    { name: "Turkey", code: "+90", format: "5012345678" },
+    { name: "UAE", code: "+971", format: "501234567" },
+    { name: "United Kingdom", code: "+44", format: "7123456789" },
+    { name: "USA", code: "+1", format: "2015550123" },
+    { name: "Vietnam", code: "+84", format: "912345678" },
+  ], []);
+
   const [countryCode, setCountryCode] = useState("+63");
   const [phoneNumber, setPhoneNumber] = useState("");
+
+  const selectedCountry =
+    countries.find((c) => c.code === countryCode) || countries[0];
 
   const [formData, setFormData] = useState({
     name: "",
@@ -192,10 +258,8 @@ export default function ContactPage() {
               to help.
             </p>
 
-            {/* CONTACT CARDS */}
             <div className="space-y-6">
 
-              {/* ADDRESS */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -220,7 +284,6 @@ export default function ContactPage() {
 
               </motion.div>
 
-              {/* PHONE */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -245,7 +308,6 @@ export default function ContactPage() {
 
               </motion.div>
 
-              {/* EMAIL */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -272,7 +334,6 @@ export default function ContactPage() {
 
               </motion.div>
 
-              {/* HOURS */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -345,95 +406,32 @@ export default function ContactPage() {
                 <div className="sm:w-65">
 
                   <select
-  value={countryCode}
-  onChange={(e) => setCountryCode(e.target.value)}
-  className="
-    w-full
-    p-4
-    rounded-xl
-    bg-white/10
-    border
-    border-white/10
-    text-white
-    outline-none
-    focus:border-[#D4A017]
-    transition-all
-    duration-300
-  "
->
-  <option value="+93" className="text-black">🇦🇫 Afghanistan (+93)</option>
-  <option value="+355" className="text-black">🇦🇱 Albania (+355)</option>
-  <option value="+213" className="text-black">🇩🇿 Algeria (+213)</option>
-  <option value="+376" className="text-black">🇦🇩 Andorra (+376)</option>
-  <option value="+244" className="text-black">🇦🇴 Angola (+244)</option>
-  <option value="+54" className="text-black">🇦🇷 Argentina (+54)</option>
-  <option value="+374" className="text-black">🇦🇲 Armenia (+374)</option>
-  <option value="+61" className="text-black">🇦🇺 Australia (+61)</option>
-  <option value="+43" className="text-black">🇦🇹 Austria (+43)</option>
-  <option value="+994" className="text-black">🇦🇿 Azerbaijan (+994)</option>
-  <option value="+973" className="text-black">🇧🇭 Bahrain (+973)</option>
-  <option value="+880" className="text-black">🇧🇩 Bangladesh (+880)</option>
-  <option value="+375" className="text-black">🇧🇾 Belarus (+375)</option>
-  <option value="+32" className="text-black">🇧🇪 Belgium (+32)</option>
-  <option value="+55" className="text-black">🇧🇷 Brazil (+55)</option>
-  <option value="+359" className="text-black">🇧🇬 Bulgaria (+359)</option>
-  <option value="+855" className="text-black">🇰🇭 Cambodia (+855)</option>
-  <option value="+1" className="text-black">🇨🇦 Canada (+1)</option>
-  <option value="+86" className="text-black">🇨🇳 China (+86)</option>
-  <option value="+57" className="text-black">🇨🇴 Colombia (+57)</option>
-  <option value="+420" className="text-black">🇨🇿 Czech Republic (+420)</option>
-  <option value="+45" className="text-black">🇩🇰 Denmark (+45)</option>
-  <option value="+20" className="text-black">🇪🇬 Egypt (+20)</option>
-  <option value="+372" className="text-black">🇪🇪 Estonia (+372)</option>
-  <option value="+358" className="text-black">🇫🇮 Finland (+358)</option>
-  <option value="+33" className="text-black">🇫🇷 France (+33)</option>
-  <option value="+49" className="text-black">🇩🇪 Germany (+49)</option>
-  <option value="+30" className="text-black">🇬🇷 Greece (+30)</option>
-  <option value="+852" className="text-black">🇭🇰 Hong Kong (+852)</option>
-  <option value="+36" className="text-black">🇭🇺 Hungary (+36)</option>
-  <option value="+91" className="text-black">🇮🇳 India (+91)</option>
-  <option value="+62" className="text-black">🇮🇩 Indonesia (+62)</option>
-  <option value="+98" className="text-black">🇮🇷 Iran (+98)</option>
-  <option value="+964" className="text-black">🇮🇶 Iraq (+964)</option>
-  <option value="+353" className="text-black">🇮🇪 Ireland (+353)</option>
-  <option value="+972" className="text-black">🇮🇱 Israel (+972)</option>
-  <option value="+39" className="text-black">🇮🇹 Italy (+39)</option>
-  <option value="+81" className="text-black">🇯🇵 Japan (+81)</option>
-  <option value="+962" className="text-black">🇯🇴 Jordan (+962)</option>
-  <option value="+7" className="text-black">🇰🇿 Kazakhstan (+7)</option>
-  <option value="+82" className="text-black">🇰🇷 Korea (+82)</option>
-  <option value="+965" className="text-black">🇰🇼 Kuwait (+965)</option>
-  <option value="+856" className="text-black">🇱🇦 Laos (+856)</option>
-  <option value="+961" className="text-black">🇱🇧 Lebanon (+961)</option>
-  <option value="+60" className="text-black">🇲🇾 Malaysia (+60)</option>
-  <option value="+52" className="text-black">🇲🇽 Mexico (+52)</option>
-  <option value="+95" className="text-black">🇲🇲 Myanmar (+95)</option>
-  <option value="+977" className="text-black">🇳🇵 Nepal (+977)</option>
-  <option value="+31" className="text-black">🇳🇱 Netherlands (+31)</option>
-  <option value="+64" className="text-black">🇳🇿 New Zealand (+64)</option>
-  <option value="+47" className="text-black">🇳🇴 Norway (+47)</option>
-  <option value="+92" className="text-black">🇵🇰 Pakistan (+92)</option>
-  <option value="+63" className="text-black">🇵🇭 Philippines (+63)</option>
-  <option value="+48" className="text-black">🇵🇱 Poland (+48)</option>
-  <option value="+351" className="text-black">🇵🇹 Portugal (+351)</option>
-  <option value="+974" className="text-black">🇶🇦 Qatar (+974)</option>
-  <option value="+40" className="text-black">🇷🇴 Romania (+40)</option>
-  <option value="+7" className="text-black">🇷🇺 Russia (+7)</option>
-  <option value="+966" className="text-black">🇸🇦 Saudi Arabia (+966)</option>
-  <option value="+65" className="text-black">🇸🇬 Singapore (+65)</option>
-  <option value="+27" className="text-black">🇿🇦 South Africa (+27)</option>
-  <option value="+34" className="text-black">🇪🇸 Spain (+34)</option>
-  <option value="+94" className="text-black">🇱🇰 Sri Lanka (+94)</option>
-  <option value="+46" className="text-black">🇸🇪 Sweden (+46)</option>
-  <option value="+41" className="text-black">🇨🇭 Switzerland (+41)</option>
-  <option value="+886" className="text-black">🇹🇼 Taiwan (+886)</option>
-  <option value="+66" className="text-black">🇹🇭 Thailand (+66)</option>
-  <option value="+90" className="text-black">🇹🇷 Turkey (+90)</option>
-  <option value="+971" className="text-black">🇦🇪 UAE (+971)</option>
-  <option value="+44" className="text-black">🇬🇧 United Kingdom (+44)</option>
-  <option value="+1" className="text-black">🇺🇸 USA (+1)</option>
-  <option value="+84" className="text-black">🇻🇳 Vietnam (+84)</option>
-</select>
+                    value={countryCode}
+                    onChange={(e) => setCountryCode(e.target.value)}
+                    className="
+                      w-full
+                      p-4
+                      rounded-xl
+                      bg-white/10
+                      border
+                      border-white/10
+                      text-white
+                      outline-none
+                      focus:border-[#D4A017]
+                      transition-all
+                      duration-300
+                    "
+                  >
+                    {countries.map((country) => (
+                      <option
+                        key={`${country.name}-${country.code}`}
+                        value={country.code}
+                        className="text-black"
+                      >
+                        {country.name} ({country.code})
+                      </option>
+                    ))}
+                  </select>
 
                 </div>
 
@@ -447,12 +445,11 @@ export default function ContactPage() {
                   <input
                     type="tel"
                     value={phoneNumber}
-                    onChange={(e) =>
-                      setPhoneNumber(
-                        e.target.value.replace(/[^0-9]/g, "")
-                      )
-                    }
-                    placeholder="9123456789"
+                    onChange={(e) => {
+                      const numbersOnly = e.target.value.replace(/\D/g, "");
+                      setPhoneNumber(numbersOnly);
+                    }}
+                    placeholder={selectedCountry.format}
                     required
                     className="
                       w-full
