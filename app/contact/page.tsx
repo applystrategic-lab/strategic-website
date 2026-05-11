@@ -232,6 +232,7 @@ setTimeout(() => {
 
                   <p className="text-gray-600 leading-relaxed">
                     +63 915 764 4053
+              
                   </p>
                 </div>
 
@@ -257,9 +258,8 @@ setTimeout(() => {
 
                   <p className="text-gray-600 leading-relaxed">
                     applystrategic@gmail.com
-                    <br>
+                    <br />
                     japanjobsstrategic@gmail.com
-                    </br>
                   </p>
                 </div>
 
