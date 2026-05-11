@@ -345,32 +345,95 @@ export default function ContactPage() {
                 <div className="sm:w-65">
 
                   <select
-                    value={countryCode}
-                    onChange={(e) => setCountryCode(e.target.value)}
-                    className="
-                      w-full
-                      p-4
-                      rounded-xl
-                      bg-white/10
-                      border
-                      border-white/10
-                      text-black
-                      outline-none
-                      focus:border-[#D4A017]
-                      transition-all
-                      duration-300
-                    "
-                  >
-                    <option value="+63">🇵🇭 Philippines (+63)</option>
-                    <option value="+81">🇯🇵 Japan (+81)</option>
-                    <option value="+82">🇰🇷 Korea (+82)</option>
-                    <option value="+886">🇹🇼 Taiwan (+886)</option>
-                    <option value="+971">🇦🇪 UAE (+971)</option>
-                    <option value="+974">🇶🇦 Qatar (+974)</option>
-                    <option value="+966">🇸🇦 Saudi Arabia (+966)</option>
-                    <option value="+1">🇺🇸 USA (+1)</option>
-                    <option value="+61">🇦🇺 Australia (+61)</option>
-                  </select>
+  value={countryCode}
+  onChange={(e) => setCountryCode(e.target.value)}
+  className="
+    w-full
+    p-4
+    rounded-xl
+    bg-white/10
+    border
+    border-white/10
+    text-white
+    outline-none
+    focus:border-[#D4A017]
+    transition-all
+    duration-300
+  "
+>
+  <option value="+93" className="text-black">🇦🇫 Afghanistan (+93)</option>
+  <option value="+355" className="text-black">🇦🇱 Albania (+355)</option>
+  <option value="+213" className="text-black">🇩🇿 Algeria (+213)</option>
+  <option value="+376" className="text-black">🇦🇩 Andorra (+376)</option>
+  <option value="+244" className="text-black">🇦🇴 Angola (+244)</option>
+  <option value="+54" className="text-black">🇦🇷 Argentina (+54)</option>
+  <option value="+374" className="text-black">🇦🇲 Armenia (+374)</option>
+  <option value="+61" className="text-black">🇦🇺 Australia (+61)</option>
+  <option value="+43" className="text-black">🇦🇹 Austria (+43)</option>
+  <option value="+994" className="text-black">🇦🇿 Azerbaijan (+994)</option>
+  <option value="+973" className="text-black">🇧🇭 Bahrain (+973)</option>
+  <option value="+880" className="text-black">🇧🇩 Bangladesh (+880)</option>
+  <option value="+375" className="text-black">🇧🇾 Belarus (+375)</option>
+  <option value="+32" className="text-black">🇧🇪 Belgium (+32)</option>
+  <option value="+55" className="text-black">🇧🇷 Brazil (+55)</option>
+  <option value="+359" className="text-black">🇧🇬 Bulgaria (+359)</option>
+  <option value="+855" className="text-black">🇰🇭 Cambodia (+855)</option>
+  <option value="+1" className="text-black">🇨🇦 Canada (+1)</option>
+  <option value="+86" className="text-black">🇨🇳 China (+86)</option>
+  <option value="+57" className="text-black">🇨🇴 Colombia (+57)</option>
+  <option value="+420" className="text-black">🇨🇿 Czech Republic (+420)</option>
+  <option value="+45" className="text-black">🇩🇰 Denmark (+45)</option>
+  <option value="+20" className="text-black">🇪🇬 Egypt (+20)</option>
+  <option value="+372" className="text-black">🇪🇪 Estonia (+372)</option>
+  <option value="+358" className="text-black">🇫🇮 Finland (+358)</option>
+  <option value="+33" className="text-black">🇫🇷 France (+33)</option>
+  <option value="+49" className="text-black">🇩🇪 Germany (+49)</option>
+  <option value="+30" className="text-black">🇬🇷 Greece (+30)</option>
+  <option value="+852" className="text-black">🇭🇰 Hong Kong (+852)</option>
+  <option value="+36" className="text-black">🇭🇺 Hungary (+36)</option>
+  <option value="+91" className="text-black">🇮🇳 India (+91)</option>
+  <option value="+62" className="text-black">🇮🇩 Indonesia (+62)</option>
+  <option value="+98" className="text-black">🇮🇷 Iran (+98)</option>
+  <option value="+964" className="text-black">🇮🇶 Iraq (+964)</option>
+  <option value="+353" className="text-black">🇮🇪 Ireland (+353)</option>
+  <option value="+972" className="text-black">🇮🇱 Israel (+972)</option>
+  <option value="+39" className="text-black">🇮🇹 Italy (+39)</option>
+  <option value="+81" className="text-black">🇯🇵 Japan (+81)</option>
+  <option value="+962" className="text-black">🇯🇴 Jordan (+962)</option>
+  <option value="+7" className="text-black">🇰🇿 Kazakhstan (+7)</option>
+  <option value="+82" className="text-black">🇰🇷 Korea (+82)</option>
+  <option value="+965" className="text-black">🇰🇼 Kuwait (+965)</option>
+  <option value="+856" className="text-black">🇱🇦 Laos (+856)</option>
+  <option value="+961" className="text-black">🇱🇧 Lebanon (+961)</option>
+  <option value="+60" className="text-black">🇲🇾 Malaysia (+60)</option>
+  <option value="+52" className="text-black">🇲🇽 Mexico (+52)</option>
+  <option value="+95" className="text-black">🇲🇲 Myanmar (+95)</option>
+  <option value="+977" className="text-black">🇳🇵 Nepal (+977)</option>
+  <option value="+31" className="text-black">🇳🇱 Netherlands (+31)</option>
+  <option value="+64" className="text-black">🇳🇿 New Zealand (+64)</option>
+  <option value="+47" className="text-black">🇳🇴 Norway (+47)</option>
+  <option value="+92" className="text-black">🇵🇰 Pakistan (+92)</option>
+  <option value="+63" className="text-black">🇵🇭 Philippines (+63)</option>
+  <option value="+48" className="text-black">🇵🇱 Poland (+48)</option>
+  <option value="+351" className="text-black">🇵🇹 Portugal (+351)</option>
+  <option value="+974" className="text-black">🇶🇦 Qatar (+974)</option>
+  <option value="+40" className="text-black">🇷🇴 Romania (+40)</option>
+  <option value="+7" className="text-black">🇷🇺 Russia (+7)</option>
+  <option value="+966" className="text-black">🇸🇦 Saudi Arabia (+966)</option>
+  <option value="+65" className="text-black">🇸🇬 Singapore (+65)</option>
+  <option value="+27" className="text-black">🇿🇦 South Africa (+27)</option>
+  <option value="+34" className="text-black">🇪🇸 Spain (+34)</option>
+  <option value="+94" className="text-black">🇱🇰 Sri Lanka (+94)</option>
+  <option value="+46" className="text-black">🇸🇪 Sweden (+46)</option>
+  <option value="+41" className="text-black">🇨🇭 Switzerland (+41)</option>
+  <option value="+886" className="text-black">🇹🇼 Taiwan (+886)</option>
+  <option value="+66" className="text-black">🇹🇭 Thailand (+66)</option>
+  <option value="+90" className="text-black">🇹🇷 Turkey (+90)</option>
+  <option value="+971" className="text-black">🇦🇪 UAE (+971)</option>
+  <option value="+44" className="text-black">🇬🇧 United Kingdom (+44)</option>
+  <option value="+1" className="text-black">🇺🇸 USA (+1)</option>
+  <option value="+84" className="text-black">🇻🇳 Vietnam (+84)</option>
+</select>
 
                 </div>
 
