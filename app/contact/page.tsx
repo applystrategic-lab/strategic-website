@@ -303,6 +303,8 @@ export default function ContactPage() {
 
                   <p className="text-gray-600 leading-relaxed">
                     +63 915 764 4053
+                    <br />
+                    +63 (02) 8654-7696
                   </p>
                 </div>
 
