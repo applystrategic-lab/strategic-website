@@ -1,6 +1,9 @@
 import nodemailer from "nodemailer";
 
+export const runtime = "nodejs";
+
 export async function POST(req) {
+
   try {
 
     const formData = await req.formData();
@@ -16,7 +19,39 @@ export async function POST(req) {
 
     let attachments = [];
 
+    // FILE VALIDATION
     if (resume && typeof resume === "object") {
+
+      const allowedTypes = [
+        "application/pdf",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      ];
+
+      if (!allowedTypes.includes(resume.type)) {
+
+        return Response.json(
+          {
+            error: "Only PDF and DOC/DOCX files are allowed.",
+          },
+          {
+            status: 400,
+          }
+        );
+      }
+
+      // MAX 5MB
+      if (resume.size > 5 * 1024 * 1024) {
+
+        return Response.json(
+          {
+            error: "Resume file is too large. Maximum is 5MB.",
+          },
+          {
+            status: 400,
+          }
+        );
+      }
 
       const bytes = await resume.arrayBuffer();
 
@@ -37,16 +72,19 @@ export async function POST(req) {
     });
 
     await transporter.sendMail({
+
       from: process.env.EMAIL_USER,
+
       to: [
-    "applystrategic@gmail.com",
-    "japanjobsstrategic@gmail.com",
-  ],
+        process.env.EMAIL_USER,
+        "yoursecondemail@gmail.com",
+      ],
 
       subject: `New Job Application - ${fullName}`,
 
       html: `
         <div style="font-family: Arial; padding:20px;">
+
           <h2>New Applicant</h2>
 
           <p><strong>Full Name:</strong> ${fullName}</p>
@@ -62,18 +100,20 @@ export async function POST(req) {
           <p><strong>Experience:</strong></p>
 
           <p>${experience}</p>
+
         </div>
       `,
 
       attachments,
     });
-     return Response.json({
+
+    return Response.json({
       success: true,
     });
 
   } catch (error) {
 
-    console.log(error);
+    console.log("APPLY ERROR:", error);
 
     return Response.json(
       {
