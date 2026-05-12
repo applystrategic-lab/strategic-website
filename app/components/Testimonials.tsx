@@ -1,30 +1,48 @@
 "use client";
 
 import FadeUp from "./FadeUp";
-import { Star, Quote } from "lucide-react";
+import {
+  Star,
+  Quote,
+  CheckCircle2,
+  Globe2,
+  BriefcaseBusiness,
+} from "lucide-react";
+
 import { motion } from "framer-motion";
 
 const testimonials = [
   {
     name: "Maria Santos",
-    role: "Registered Nurse • Japan",
+    role: "Registered Nurse",
+    country: "Japan",
+    flag: "🇯🇵",
+    deployed: "Successfully Deployed",
     image: "/images/testimonial1.jpg",
     quote:
-      "Strategic International Manpower Services helped me achieve my dream career in Japan. The recruitment process was smooth, professional, and highly organized.",
+      "Strategic International Manpower Services guided me throughout my Japan application process. From interview preparation to deployment, their team was very professional and supportive.",
   },
+
   {
     name: "John Ramirez",
-    role: "Factory Worker • Taiwan",
+    role: "Factory Worker",
+    country: "Taiwan",
+    flag: "🇹🇼",
+    deployed: "Verified Applicant",
     image: "/images/testimonial2.jpg",
     quote:
-      "I am grateful to Strategic for giving me the opportunity to work abroad. Their team guided me throughout the entire application and deployment process.",
+      "The entire process was smooth and well organized. Strategic helped me secure stable overseas employment and assisted me with all my required documents.",
   },
+
   {
     name: "Angela Cruz",
-    role: "Hotel Staff • UAE",
+    role: "Hotel Staff",
+    country: "UAE",
+    flag: "🇦🇪",
+    deployed: "Returning Worker",
     image: "/images/testimonial3.jpg",
     quote:
-      "The agency was very professional and supportive from start to finish. I highly recommend Strategic to aspiring overseas workers.",
+      "I truly appreciate how accommodating and responsive the agency was during my application. They made the overseas deployment process less stressful and more professional.",
   },
 ];
 
@@ -53,8 +71,8 @@ export default function Testimonials() {
               Success Stories
             </p>
 
-            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              What Our Applicants Say
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Global Workforce Experiences
             </h2>
 
             {/* GOLD LINE */}
@@ -67,6 +85,181 @@ export default function Testimonials() {
             </p>
 
           </div>
+
+          {/* STATS */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 text-center backdrop-blur-xl">
+              <div className="flex justify-center mb-4">
+                <Globe2 className="text-[#D4A017]" size={36} />
+              </div>
+
+              <h3 className="text-4xl font-bold text-white mb-2">
+                12+
+              </h3>
+
+              <p className="text-gray-400 uppercase tracking-[2px] text-sm">
+                Countries
+              </p>
+            </div>
+
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 text-center backdrop-blur-xl">
+              <div className="flex justify-center mb-4">
+                <BriefcaseBusiness className="text-[#D4A017]" size={36} />
+              </div>
+
+              <h3 className="text-4xl font-bold text-white mb-2">
+                30+
+              </h3>
+
+              <p className="text-gray-400 uppercase tracking-[2px] text-sm">
+                Years Experience
+              </p>
+            </div>
+
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 text-center backdrop-blur-xl">
+              <div className="flex justify-center mb-4">
+                <CheckCircle2 className="text-[#D4A017]" size={36} />
+              </div>
+
+              <h3 className="text-4xl font-bold text-white mb-2">
+                5,000+
+              </h3>
+
+              <p className="text-gray-400 uppercase tracking-[2px] text-sm">
+                Applicants Assisted
+              </p>
+            </div>
+
+            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 text-center backdrop-blur-xl">
+              <div className="flex justify-center mb-4">
+                <Star className="text-[#D4A017]" size={36} />
+              </div>
+
+              <h3 className="text-4xl font-bold text-white mb-2">
+                95%
+              </h3>
+
+              <p className="text-gray-400 uppercase tracking-[2px] text-sm">
+                Deployment Success
+              </p>
+            </div>
+
+          </div>
+
+          {/* FEATURED STORY */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="
+              relative
+              overflow-hidden
+              bg-linear-to-br
+              from-white/10
+              to-white/5
+              border
+              border-[#D4A017]/20
+              rounded-[40px]
+              p-10
+              lg:p-14
+              mb-20
+              backdrop-blur-2xl
+              shadow-[0_20px_80px_rgba(0,0,0,0.35)]
+            "
+          >
+
+            {/* FEATURED GLOW */}
+            <div className="absolute top-0 right-0 w-80 h-80 bg-[#D4A017]/10 rounded-full blur-3xl" />
+
+            <div className="grid lg:grid-cols-[300px_1fr] gap-12 items-center relative z-10">
+
+              {/* IMAGE */}
+              <div className="relative">
+
+                <img
+                  src="/images/testimonial1.jpg"
+                  alt="Featured Applicant"
+                  className="
+                    w-full
+                    h-87.5
+                    object-cover
+                    rounded-3xl
+                    border
+                    border-white/10
+                    shadow-2xl
+                  "
+                />
+
+                <div className="
+                  absolute
+                  bottom-5
+                  left-5
+                  bg-[#D4A017]
+                  text-[#071426]
+                  px-4
+                  py-2
+                  rounded-full
+                  text-sm
+                  font-bold
+                  tracking-wide
+                  shadow-xl
+                ">
+                  Successfully Deployed
+                </div>
+
+              </div>
+
+              {/* CONTENT */}
+              <div>
+
+                <div className="flex items-center gap-2 mb-5">
+
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      size={22}
+                      className="fill-[#D4A017] text-[#D4A017]"
+                    />
+                  ))}
+
+                </div>
+
+                <Quote
+                  size={70}
+                  className="text-[#D4A017]/20 mb-6"
+                />
+
+                <p className="text-2xl md:text-3xl leading-relaxed text-white font-light mb-10">
+                  “Strategic International Manpower Services
+                  helped me achieve my dream career in Japan.
+                  Their team guided me from application,
+                  interview preparation, documentation, and
+                  deployment with professionalism and care.”
+                </p>
+
+                <div className="flex items-center gap-5">
+
+                  <div>
+
+                    <h3 className="text-3xl font-bold text-white mb-2">
+                      Maria Santos
+                    </h3>
+
+                    <p className="text-[#D4A017] uppercase tracking-[3px] text-sm">
+                      Registered Nurse • Japan 🇯🇵
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </motion.div>
 
           {/* TESTIMONIAL GRID */}
           <div className="grid lg:grid-cols-3 gap-8">
@@ -116,6 +309,15 @@ export default function Testimonials() {
 
                 <div className="relative z-10">
 
+                  {/* BADGE */}
+                  <div className="inline-flex items-center gap-2 bg-[#D4A017]/15 border border-[#D4A017]/20 text-[#D4A017] px-4 py-2 rounded-full text-xs uppercase tracking-[2px] font-semibold mb-8">
+
+                    <CheckCircle2 size={14} />
+
+                    {testimonial.deployed}
+
+                  </div>
+
                   {/* USER */}
                   <div className="flex items-center gap-5 mb-8">
 
@@ -147,6 +349,10 @@ export default function Testimonials() {
 
                       <p className="text-[#D4A017] tracking-wide text-sm uppercase">
                         {testimonial.role}
+                      </p>
+
+                      <p className="text-gray-400 text-sm mt-1">
+                        {testimonial.country} {testimonial.flag}
                       </p>
 
                     </div>
