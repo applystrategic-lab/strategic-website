@@ -17,7 +17,7 @@ const testimonials = [
     role: "Registered Nurse",
     country: "Japan",
     countryCode: "JP",
-    flag: "🇯🇵",
+    flag: "/flags/japan.png",
     deployed: "Successfully Deployed",
     quote:
       "Strategic International Manpower Services guided me throughout my Japan application process. From interview preparation to deployment, their team was very professional and supportive.",
@@ -28,7 +28,7 @@ const testimonials = [
     role: "Factory Worker",
     country: "Taiwan",
     countryCode: "TW",
-    flag: "🇹🇼",
+    flag: "/flags/taiwan.png",
     deployed: "Verified Applicant",
     quote:
       "The entire process was smooth and well organized. Strategic helped me secure stable overseas employment and assisted me with all my required documents.",
@@ -39,7 +39,7 @@ const testimonials = [
     role: "Hotel Staff",
     country: "UAE",
     countryCode: "AE",
-    flag: "🇦🇪",
+    flag: "/flags/uae.png",
     deployed: "Returning Worker",
     quote:
       "I truly appreciate how accommodating and responsive the agency was during my application. They made the overseas deployment process less stressful and more professional.",
@@ -199,9 +199,20 @@ export default function Testimonials() {
                 >
 
                   {/* FLAG */}
-                  <div className="text-8xl mb-6 drop-shadow-2xl">
-                    🇯🇵
-                  </div>
+                  <img
+                    src="/flags/japan.png"
+                    alt="Japan Flag"
+                    className="
+                      w-48
+                      h-32
+                      object-cover
+                      rounded-2xl
+                      shadow-2xl
+                      mb-6
+                      border
+                      border-white/10
+                    "
+                  />
 
                   {/* COUNTRY */}
                   <h3 className="text-4xl font-bold text-white mb-3">
@@ -273,7 +284,7 @@ export default function Testimonials() {
                     </h3>
 
                     <p className="text-[#D4A017] uppercase tracking-[3px] text-sm">
-                      Registered Nurse • Japan Deployment 🇯🇵
+                      Registered Nurse • Japan Deployment
                     </p>
 
                   </div>
@@ -353,19 +364,18 @@ export default function Testimonials() {
                           w-20
                           h-20
                           rounded-2xl
-                          bg-linear-to-br
-                          from-[#0b1d35]
-                          to-[#071426]
+                          overflow-hidden
                           border
                           border-white/10
                           shadow-xl
-                          flex
-                          items-center
-                          justify-center
-                          text-4xl
+                          bg-white
                         "
                       >
-                        {testimonial.flag}
+                        <img
+                          src={testimonial.flag}
+                          alt={testimonial.country}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
 
                       <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#22c55e] border-2 border-[#071426]" />
@@ -383,7 +393,7 @@ export default function Testimonials() {
                       </p>
 
                       <p className="text-gray-400 text-sm mt-1">
-                        {testimonial.country} {testimonial.flag}
+                        {testimonial.country}
                       </p>
 
                     </div>
