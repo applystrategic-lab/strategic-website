@@ -356,58 +356,58 @@ export default function Testimonials() {
                   </div>
 
                   {/* USER */}
-                  <div className="flex items-center gap-5 mb-8">
+<div className="flex items-start gap-5 mb-8">
 
-                    <div className="relative">
+  <div className="relative shrink-0">
 
-                      <div
-                        className="
-                          w-24
-                          h-16
-                          rounded-2xl
-                          overflow-hidden
-                          border
-                          border-white/10
-                          shadow-xl
-                          bg-white
-                          flex
-                          items-center
-                          justify-center
-                          p-1
-                        "
-                      >
-                        <img
-                          src={testimonial.flag}
-                          alt={testimonial.country}
-                          className="
-                            w-full
-                            h-full
-                            object-contain
-                          "
-                        />
-                      </div>
+    <div
+      className="
+        w-24
+        h-16
+        rounded-2xl
+        overflow-hidden
+        border
+        border-white/10
+        shadow-xl
+        bg-white
+        flex
+        items-center
+        justify-center
+        p-1
+      "
+    >
+      <img
+        src={testimonial.flag}
+        alt={testimonial.country}
+        className="
+          max-w-full
+          max-h-full
+          object-contain
+        "
+      />
+    </div>
 
-                      <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#22c55e] border-2 border-[#071426]" />
+    <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#22c55e] border-2 border-[#071426]" />
 
-                    </div>
+  </div>
 
-                    <div>
+  <div className="pt-1">
 
-                      <h3 className="text-2xl font-bold text-white mb-1">
-                        {testimonial.name}
-                      </h3>
+    <h3 className="text-2xl font-bold text-white mb-1 leading-tight">
+      {testimonial.name}
+    </h3>
 
-                      <p className="text-[#D4A017] tracking-wide text-sm uppercase">
-                        {testimonial.role}
-                      </p>
+    <p className="text-[#D4A017] tracking-wide text-sm uppercase">
+      {testimonial.role}
+    </p>
 
-                      <p className="text-gray-400 text-sm mt-1">
-                        {testimonial.country}
-                      </p>
+    <p className="text-gray-400 text-sm mt-1">
+      {testimonial.country}
+    </p>
 
-                    </div>
+  </div>
 
-                  </div>
+</div>
 
                   {/* STARS */}
                   <div className="flex gap-2 mb-6">
