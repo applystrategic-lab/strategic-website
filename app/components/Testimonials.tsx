@@ -230,21 +230,23 @@ export default function Testimonials() {
                 </div>
 
                 <div className="
-                  absolute
-                  bottom-3
-                  left-5
-                  bg-[#D4A017]
-                  text-[#071426]
-                  px-4
-                  py-2
-                  rounded-full
-                  text-sm
-                  font-bold
-                  tracking-wide
-                  shadow-xl
-                ">
-                  Successfully Deployed
-                </div>
+  absolute
+  bottom-3
+  left-1/2
+  -translate-x-1/2
+  bg-[#D4A017]
+  text-[#071426]
+  px-6
+  py-2
+  rounded-full
+  text-sm
+  font-bold
+  tracking-wide
+  shadow-xl
+  whitespace-nowrap
+">
+  Successfully Deployed
+</div>
 
               </div>
 
