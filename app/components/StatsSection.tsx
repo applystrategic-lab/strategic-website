@@ -17,7 +17,7 @@ const stats = [
   },
   {
     icon: Globe2,
-    number: "15+",
+    number: "11",
     label: "Partner Countries",
   },
   {
@@ -27,7 +27,7 @@ const stats = [
   },
   {
     icon: ShieldCheck,
-    number: "20+",
+    number: "35+",
     label: "Years Experience",
   },
 ];
@@ -45,18 +45,18 @@ export default function StatsSection() {
             opacity-[0.03]
             pointer-events-none
             bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
-            bg-[size:80px_80px]
+            bg-size[80px_80px]
           "
         />
 
         {/* BACKGROUND GLOW */}
         <div className="absolute inset-0 opacity-30 pointer-events-none">
 
-          <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#D4A017]/20 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-0 w-125 h-125 bg-[#D4A017]/20 rounded-full blur-3xl" />
 
-          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#1E4E8C]/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-125 h-125 bg-[#1E4E8C]/20 rounded-full blur-3xl" />
 
-          <div className="absolute top-[35%] left-[40%] w-[300px] h-[300px] bg-white/10 rounded-full blur-3xl" />
+          <div className="absolute top-[35%] left-[40%] w-75 h-75 bg-white/10 rounded-full blur-3xl" />
 
         </div>
 
@@ -122,10 +122,10 @@ export default function StatsSection() {
                 >
 
                   {/* TOP GOLD LINE */}
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#D4A017] via-[#f3d36a] to-[#D4A017]" />
+                  <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-[#D4A017] via-[#f3d36a] to-[#D4A017]" />
 
                   {/* CARD GLOW */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-br from-[#D4A017]/10 via-transparent to-transparent" />
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-linear-to-br from-[#D4A017]/10 via-transparent to-transparent" />
 
                   <div className="relative z-10">
 

@@ -18,11 +18,11 @@ export default function AboutPage() {
         {/* BACKGROUND GLOW */}
         <div className="absolute inset-0 opacity-20 overflow-hidden">
 
-  <div className="absolute w-[500px] h-[500px] bg-[#D4A017] rounded-full blur-3xl top-[-100px] left-[-100px] animate-pulse" />
+  <div className="absolute w-125 h-125 bg-[#D4A017] rounded-full blur-3xl -top-25 -left-25 animate-pulse" />
 
-  <div className="absolute w-[500px] h-[500px] bg-[#1E4E8C] rounded-full blur-3xl bottom-[-100px] right-[-100px] animate-pulse" />
+  <div className="absolute w-125 h-125 bg-[#1E4E8C] rounded-full blur-3xl -bottom-25 -right-25 animate-pulse" />
 
-  <div className="absolute w-[300px] h-[300px] bg-white/10 rounded-full blur-3xl top-[20%] left-[40%] animate-bounce" />
+  <div className="absolute w-75 h-75 bg-white/10 rounded-full blur-3xl top-[20%] left-[40%] animate-bounce" />
 
 </div>
 
@@ -70,19 +70,17 @@ export default function AboutPage() {
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
 
               <p>
-                Strategic International Manpower Services Inc.
-                is a Philippine-based recruitment and staffing
-                agency specializing in overseas deployment
-                opportunities for Filipino professionals and
-                skilled workers.
+                An intrinsic advantage in tapping the Philippines manpower resources is the wide use of
+                English language in the country (it being the world's third largest English speaking nation)
+                and a hig literacy rate of over 88%.
               </p>
 
               <p>
-                The company provides recruitment solutions
-                across multiple industries including healthcare,
-                engineering, construction, hospitality,
-                manufacturing, technical services, and
-                professional staffing.
+                Our agency prides itself  in its capability to professionally provides
+                staffing solutions for a diverse range of requirements ranging from Engineers,
+                Technicians, Healthcare practitioners, Office professionals, Skilled and Non - Skilled
+                workers, Technical Intern Trainees (TITP), Specified Skilled Workers (SSW), and Engineer/
+                Specialist in Humanities and International services.
               </p>
 
               <p>

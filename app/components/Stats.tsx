@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const stats = [
   {
-    number: 20,
+    number: 35,
     suffix: "+",
     label: "Years Experience",
   },
@@ -41,7 +41,7 @@ export default function Stats() {
             repeat: Infinity,
             duration: 8,
           }}
-          className="absolute top-0 left-0 w-[400px] h-[400px] bg-[#D4A017] rounded-full blur-3xl"
+          className="absolute top-0 left-0 w-100 h-100 bg-[#D4A017] rounded-full blur-3xl"
         />
 
         <motion.div
@@ -52,10 +52,10 @@ export default function Stats() {
             repeat: Infinity,
             duration: 10,
           }}
-          className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#1E4E8C] rounded-full blur-3xl"
+          className="absolute bottom-0 right-0 w-100 h-100 bg-[#1E4E8C] rounded-full blur-3xl"
         />
 
-        <div className="absolute top-[30%] left-[40%] w-[300px] h-[300px] bg-white/10 rounded-full blur-3xl" />
+        <div className="absolute top-[30%] left-[40%] w-75 h-75 bg-white/10 rounded-full blur-3xl" />
 
       </div>
 
@@ -66,7 +66,7 @@ export default function Stats() {
           inset-0
           opacity-[0.03]
           bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
-          bg-[size:60px_60px]
+          bg-size[60px_60px]
         "
       />
 
@@ -137,14 +137,14 @@ export default function Stats() {
             >
 
               {/* TOP GOLD LINE */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#D4A017] via-[#f3d36a] to-[#D4A017]" />
+              <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-[#D4A017] via-[#f3d36a] to-[#D4A017]" />
 
               {/* HOVER GLOW */}
               <div
                 className="
                   absolute
                   inset-0
-                  bg-gradient-to-br
+                  bg-linear-to-br
                   from-[#D4A017]/10
                   via-transparent
                   to-transparent

@@ -16,9 +16,9 @@ export default function Hero() {
 
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#D4A017]/10 rounded-full blur-3xl animate-pulse" />
 
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#1E4E8C]/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-0 w-125 h-125 bg-[#1E4E8C]/20 rounded-full blur-3xl animate-pulse" />
 
-        <div className="absolute top-[30%] left-[45%] w-[300px] h-[300px] bg-white/10 rounded-full blur-3xl" />
+        <div className="absolute top-[30%] left-[45%] w-75 h-75 bg-white/10 rounded-full blur-3xl" />
 
       </div>
 
@@ -37,7 +37,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[#071426]/80" />
 
       {/* GRADIENT OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/40 to-transparent" />
 
       {/* PREMIUM LIGHT EFFECT */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,160,23,0.12),transparent_40%)]" />
@@ -220,7 +220,7 @@ export default function Hero() {
             "
           >
             <h3 className="text-4xl font-bold text-[#D4A017] mb-2">
-              20+
+              35+
             </h3>
 
             <p className="text-white text-lg font-semibold">
@@ -299,7 +299,7 @@ export default function Hero() {
 
         <div
           className="
-            w-[2px]
+            w-0.5
             h-16
             bg-white/20
             relative
