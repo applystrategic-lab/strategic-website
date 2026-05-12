@@ -39,7 +39,7 @@ const values = [
 export default function AboutSection() {
   return (
     <FadeUp>
-      <section className="relative py-32 px-6 lg:px-8 bg-gradient-to-b from-[#071426] via-[#0B1F3A] to-[#071426] overflow-hidden">
+      <section className="relative py-32 px-6 lg:px-8 bg-linear-to-b from-[#071426] via-[#0B1F3A] to-[#071426] overflow-hidden">
 
         {/* GRID TEXTURE */}
         <div
@@ -49,16 +49,16 @@ export default function AboutSection() {
             opacity-[0.03]
             pointer-events-none
             bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)]
-            bg-[size:80px_80px]
+            bg-size:[80px_80px]
           "
         />
 
         {/* BACKGROUND GLOW */}
         <div className="absolute inset-0 pointer-events-none opacity-30">
 
-          <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#D4A017]/20 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-0 w-125 h-125 bg-[#D4A017]/20 rounded-full blur-3xl" />
 
-          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-[#1E4E8C]/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-100 h-100 bg-[#1E4E8C]/20 rounded-full blur-3xl" />
 
         </div>
 
@@ -87,10 +87,10 @@ export default function AboutSection() {
               <div className="w-24 h-1 bg-[#D4A017] rounded-full mb-8" />
 
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
-                Strategic International Manpower Services Inc.
-                is a Philippine-based recruitment agency dedicated
-                to providing world-class staffing and manpower
-                solutions for international employers.
+                Strategic International Manpower Services is an international
+                recruitment company based in the Philippines with the 
+                primary purpose of serving the manpower requipments of the
+                global market.
               </p>
 
               <p className="text-gray-400 leading-relaxed mb-10">
@@ -122,12 +122,12 @@ export default function AboutSection() {
                   "
                 >
 
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-br from-[#D4A017]/10 to-transparent" />
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-linear-0-to-br from-[#D4A017]/10 to-transparent" />
 
                   <div className="relative z-10">
 
                     <h3 className="text-4xl font-bold text-[#D4A017] mb-2">
-                      20+
+                      35+
                     </h3>
 
                     <p className="text-gray-300">
@@ -157,7 +157,7 @@ export default function AboutSection() {
                   "
                 >
 
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-br from-[#D4A017]/10 to-transparent" />
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-linear-to-br from-[#D4A017]/10 to-transparent" />
 
                   <div className="relative z-10">
 
@@ -212,7 +212,7 @@ export default function AboutSection() {
                   >
 
                     {/* HOVER GLOW */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-br from-[#D4A017]/10 to-transparent" />
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-linear-to-br from-[#D4A017]/10 to-transparent" />
 
                     <div className="relative z-10">
 

@@ -42,9 +42,9 @@ export default function AboutPage() {
           </h1>
 
           <p className="max-w-3xl mx-auto text-gray-300 text-lg md:text-xl leading-relaxed">
-            Strategic International Manpower Services Inc.
-            connects Filipino professionals with trusted
-            international employers worldwide.
+            We are a Philippine based international
+            recruitment company with over 35 years 
+            Experience.
           </p>
 
         </motion.div>
@@ -109,21 +109,27 @@ export default function AboutPage() {
                   </h3>
 
                   <p className="text-gray-300 leading-relaxed">
-                    To provide world-class recruitment and staffing
-                    solutions while supporting Filipino professionals
-                    in achieving global career opportunities.
+                    Connecting the best AVAILABLE TALENT with the best available JOB OPPORTUNITY.
                   </p>
                 </div>
 
                 <div className="border-t border-white/10 pt-8">
                   <h3 className="text-[#D4A017] text-lg font-semibold mb-2">
-                    Vision
+                    Reputation
                   </h3>
 
                   <p className="text-gray-300 leading-relaxed">
-                    To become a globally trusted manpower agency
-                    recognized for integrity, excellence, and
-                    international workforce solutions.
+                    Built on providing WIN - WIN solutions for our clients and their prospective employees.
+                  </p>
+                </div>
+
+                <div className="border-t border-white/10 pt-8">
+                  <h3 className="text-[#D4A017] text-lg font-semibold mb-2">
+                    Strength
+                  </h3>
+
+                  <p className="text-gray-300 leading-relaxed">
+                    Providing clients a competitive edge by swiftly acessing the finest talent pool available.
                   </p>
                 </div>
 
