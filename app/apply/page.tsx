@@ -220,17 +220,19 @@ const handleSubmit = async (
               className="w-full p-4 rounded-xl bg-white/10 border border-white/10 text-white placeholder-gray-300 outline-none focus:border-[#D4A017]"
             />
 
-            {/* RESUME UPLOAD */}
+           {/* RESUME UPLOAD */}
 <div>
-
-  <label className="block text-white mb-3 font-medium">
+  <label className="block text-white font-medium mb-2">
     Upload Resume
   </label>
+
+  <p className="text-sm text-gray-400 mb-3">
+    Accepted file types: PDF, DOC, DOCX
+  </p>
 
   <input
     type="file"
     name="resume"
-    onChange={handleChange}
     accept=".pdf,.doc,.docx"
     required
     className="
@@ -248,23 +250,27 @@ const handleSubmit = async (
       file:border-0
       file:bg-[#D4A017]
       file:text-white
-      file:font-semibold
       hover:file:bg-[#b88a12]
+      transition-all
+      duration-300
     "
   />
-
 </div>
 
 {/* PASSPORT UPLOAD */}
 <div>
-  <label className="block text-white mb-2 font-medium">
+  <label className="block text-white font-medium mb-2">
     Upload Passport Copy
   </label>
+
+  <p className="text-sm text-gray-400 mb-3">
+    Accepted file types: JPG, JPEG, PNG
+  </p>
 
   <input
     type="file"
     name="passport"
-    accept=".jpg,.jpeg,.png,.pdf"
+    accept=".jpg,.jpeg,.png"
     required
     className="
       w-full
@@ -274,14 +280,14 @@ const handleSubmit = async (
       border
       border-white/10
       text-white
-      file:bg-[#D4A017]
-      file:border-0
-      file:text-white
-      file:px-4
-      file:py-2
-      file:rounded-lg
       file:mr-4
-      hover:border-[#D4A017]
+      file:py-2
+      file:px-4
+      file:rounded-lg
+      file:border-0
+      file:bg-[#D4A017]
+      file:text-white
+      hover:file:bg-[#b88a12]
       transition-all
       duration-300
     "

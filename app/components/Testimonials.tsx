@@ -36,11 +36,11 @@ export default function Testimonials() {
         {/* BACKGROUND GLOW */}
         <div className="absolute inset-0 opacity-30 pointer-events-none">
 
-          <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#D4A017]/20 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-0 w-125 h-125 bg-[#D4A017]/20 rounded-full blur-3xl" />
 
-          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#1E4E8C]/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-125 h-125 bg-[#1E4E8C]/20 rounded-full blur-3xl" />
 
-          <div className="absolute top-[30%] left-[45%] w-[300px] h-[300px] bg-white/10 rounded-full blur-3xl" />
+          <div className="absolute top-[30%] left-[45%] w-125 h-125 bg-white/10 rounded-full blur-3xl" />
 
         </div>
 
@@ -102,7 +102,7 @@ export default function Testimonials() {
               >
 
                 {/* HOVER GLOW */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-br from-[#D4A017]/10 via-transparent to-transparent" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-linear-to-br from-[#D4A017]/10 via-transparent to-transparent" />
 
                 {/* QUOTE ICON */}
                 <div className="absolute top-8 right-8 opacity-10 group-hover:opacity-20 transition-all duration-500">
