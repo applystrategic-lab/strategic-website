@@ -13,34 +13,34 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    name: "Maria Santos",
+    name: "Successfully Deployed Applicant",
     role: "Registered Nurse",
     country: "Japan",
+    countryCode: "JP",
     flag: "🇯🇵",
     deployed: "Successfully Deployed",
-    image: "/images/testimonial1.jpg",
     quote:
       "Strategic International Manpower Services guided me throughout my Japan application process. From interview preparation to deployment, their team was very professional and supportive.",
   },
 
   {
-    name: "John Ramirez",
+    name: "Verified Applicant",
     role: "Factory Worker",
     country: "Taiwan",
+    countryCode: "TW",
     flag: "🇹🇼",
     deployed: "Verified Applicant",
-    image: "/images/testimonial2.jpg",
     quote:
       "The entire process was smooth and well organized. Strategic helped me secure stable overseas employment and assisted me with all my required documents.",
   },
 
   {
-    name: "Angela Cruz",
+    name: "Returning Worker",
     role: "Hotel Staff",
     country: "UAE",
+    countryCode: "AE",
     flag: "🇦🇪",
     deployed: "Returning Worker",
-    image: "/images/testimonial3.jpg",
     quote:
       "I truly appreciate how accommodating and responsive the agency was during my application. They made the overseas deployment process less stressful and more professional.",
   },
@@ -175,22 +175,47 @@ export default function Testimonials() {
 
             <div className="grid lg:grid-cols-[300px_1fr] gap-12 items-center relative z-10">
 
-              {/* IMAGE */}
+              {/* FLAG CARD */}
               <div className="relative">
 
-                <img
-                  src="/images/testimonial1.jpg"
-                  alt="Featured Applicant"
+                <div
                   className="
                     w-full
                     h-87.5
-                    object-cover
                     rounded-3xl
                     border
                     border-white/10
                     shadow-2xl
+                    bg-linear-to-br
+                    from-[#0b1d35]
+                    to-[#071426]
+                    flex
+                    flex-col
+                    items-center
+                    justify-center
+                    relative
+                    overflow-hidden
                   "
-                />
+                >
+
+                  {/* FLAG */}
+                  <div className="text-8xl mb-6 drop-shadow-2xl">
+                    🇯🇵
+                  </div>
+
+                  {/* COUNTRY */}
+                  <h3 className="text-4xl font-bold text-white mb-3">
+                    Japan
+                  </h3>
+
+                  <p className="text-[#D4A017] uppercase tracking-[4px] text-sm">
+                    Overseas Deployment
+                  </p>
+
+                  {/* GLOW */}
+                  <div className="absolute inset-0 bg-[#D4A017]/5 pointer-events-none" />
+
+                </div>
 
                 <div className="
                   absolute
@@ -244,11 +269,11 @@ export default function Testimonials() {
                   <div>
 
                     <h3 className="text-3xl font-bold text-white mb-2">
-                      Maria Santos
+                      Successfully Deployed Applicant
                     </h3>
 
                     <p className="text-[#D4A017] uppercase tracking-[3px] text-sm">
-                      Registered Nurse • Japan 🇯🇵
+                      Registered Nurse • Japan Deployment 🇯🇵
                     </p>
 
                   </div>
@@ -323,19 +348,25 @@ export default function Testimonials() {
 
                     <div className="relative">
 
-                      <img
-                        src={testimonial.image}
-                        alt={testimonial.name}
+                      <div
                         className="
                           w-20
                           h-20
                           rounded-2xl
-                          object-cover
+                          bg-linear-to-br
+                          from-[#0b1d35]
+                          to-[#071426]
                           border
                           border-white/10
                           shadow-xl
+                          flex
+                          items-center
+                          justify-center
+                          text-4xl
                         "
-                      />
+                      >
+                        {testimonial.flag}
+                      </div>
 
                       <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[#22c55e] border-2 border-[#071426]" />
 
