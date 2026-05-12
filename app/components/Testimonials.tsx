@@ -231,7 +231,7 @@ export default function Testimonials() {
 
                 <div className="
                   absolute
-                  bottom-5
+                  bottom-3
                   left-5
                   bg-[#D4A017]
                   text-[#071426]
