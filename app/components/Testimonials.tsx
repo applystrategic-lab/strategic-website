@@ -199,20 +199,21 @@ export default function Testimonials() {
                 >
 
                   {/* FLAG */}
-                  <img
-                    src="/flags/japan.png"
-                    alt="Japan Flag"
-                    className="
-                      w-48
-                      h-32
-                      object-cover
-                      rounded-2xl
-                      shadow-2xl
-                      mb-6
-                      border
-                      border-white/10
-                    "
-                  />
+                  <div className="w-52 h-36 mb-6 flex items-center justify-center">
+                    <img
+                      src="/flags/japan.png"
+                      alt="Japan Flag"
+                      className="
+                        max-w-full
+                        max-h-full
+                        object-contain
+                        rounded-2xl
+                        shadow-2xl
+                        border
+                        border-white/10
+                      "
+                    />
+                  </div>
 
                   {/* COUNTRY */}
                   <h3 className="text-4xl font-bold text-white mb-3">
@@ -361,20 +362,28 @@ export default function Testimonials() {
 
                       <div
                         className="
-                          w-20
-                          h-20
+                          w-24
+                          h-16
                           rounded-2xl
                           overflow-hidden
                           border
                           border-white/10
                           shadow-xl
                           bg-white
+                          flex
+                          items-center
+                          justify-center
+                          p-1
                         "
                       >
                         <img
                           src={testimonial.flag}
                           alt={testimonial.country}
-                          className="w-full h-full object-cover"
+                          className="
+                            w-full
+                            h-full
+                            object-contain
+                          "
                         />
                       </div>
 
