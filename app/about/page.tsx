@@ -165,7 +165,7 @@ export default function AboutPage() {
       </p>
 
       <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-        Meet The Professionals
+        Meet the Professionals
       </h2>
 
       <div className="w-24 h-1 bg-[#D4A017] mx-auto rounded-full mb-8" />
