@@ -165,7 +165,7 @@ export default function AboutPage() {
       </p>
 
       <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-        Strategic Organizational Structure
+        Meet The Professionals
       </h2>
 
       <div className="w-24 h-1 bg-[#D4A017] mx-auto rounded-full mb-8" />
@@ -265,7 +265,7 @@ export default function AboutPage() {
               </h3>
 
               <p className="text-[#D4A017] uppercase tracking-[4px] text-sm">
-                Recruitment Officer
+                
               </p>
 
             </div>
@@ -292,7 +292,7 @@ export default function AboutPage() {
               </h3>
 
               <p className="text-[#D4A017] uppercase tracking-[4px] text-sm">
-                Documentation Officer
+                
               </p>
 
             </div>
