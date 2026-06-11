@@ -144,164 +144,170 @@ export default function AboutPage() {
         <Values />
 
         {/* TEAM SECTION */}
-        <section className="relative py-28 px-6 lg:px-8 bg-[#071426] overflow-hidden">
+<section className="relative py-28 px-6 lg:px-8 bg-[#071426] overflow-hidden">
 
-          {/* BACKGROUND GLOW */}
-          <div className="absolute inset-0 pointer-events-none opacity-20">
+  {/* BACKGROUND GLOW */}
+  <div className="absolute inset-0 pointer-events-none opacity-20">
 
-            <div className="absolute top-0 left-0 w-96 h-96 bg-[#D4A017]/20 rounded-full blur-3xl" />
+    <div className="absolute top-0 left-0 w-96 h-96 bg-[#D4A017]/20 rounded-full blur-3xl" />
 
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1E4E8C]/20 rounded-full blur-3xl" />
+    <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#1E4E8C]/20 rounded-full blur-3xl" />
+
+  </div>
+
+  <div className="max-w-6xl mx-auto relative z-10">
+
+    {/* HEADER */}
+    <div className="text-center mb-20">
+
+      <p className="text-[#D4A017] uppercase tracking-[5px] text-sm font-semibold mb-4">
+        Our Team
+      </p>
+
+      <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
+        Strategic Organizational Structure
+      </h2>
+
+      <div className="w-24 h-1 bg-[#D4A017] mx-auto rounded-full mb-8" />
+
+      <p className="max-w-3xl mx-auto text-gray-400 text-lg leading-relaxed">
+        Strategic International Manpower Services is powered by experienced
+        professionals dedicated to helping Filipino workers achieve successful
+        international careers.
+      </p>
+
+    </div>
+
+    {/* ORGANIZATIONAL CHART */}
+    <div className="flex flex-col items-center">
+
+      {/* DIRECTOR */}
+      <div className="w-full max-w-2xl bg-white/5 border border-white/10 rounded-3xl backdrop-blur-xl p-6">
+
+        <div className="flex flex-col md:flex-row items-center gap-6">
+
+          <img
+            src="/team/bossjo.png"
+            alt="Jonathan Bertulfo"
+            className="w-28 h-28 rounded-full object-cover border-4 border-[#D4A017]"
+          />
+
+          <div className="text-center md:text-left">
+
+            <h3 className="text-3xl font-bold text-white mb-2">
+              Jonathan Bertulfo
+            </h3>
+
+            <p className="text-[#D4A017] uppercase tracking-[4px] text-sm">
+              Director
+            </p>
 
           </div>
 
-          <div className="max-w-7xl mx-auto relative z-10">
+        </div>
 
-            {/* HEADER */}
-            <div className="text-center mb-20">
+      </div>
 
-              <p className="text-[#D4A017] uppercase tracking-[5px] text-sm font-semibold mb-4">
-                Our Team
+      {/* CONNECTOR */}
+      <div className="w-[2px] h-12 bg-[#D4A017]" />
+
+      {/* OPERATIONS MANAGER */}
+      <div className="w-full max-w-2xl bg-white/5 border border-white/10 rounded-3xl backdrop-blur-xl p-6">
+
+        <div className="flex flex-col md:flex-row items-center gap-6">
+
+          <img
+            src="/team/sircarlos.png"
+            alt="Carlos Bautista"
+            className="w-28 h-28 rounded-full object-cover border-4 border-[#D4A017]"
+          />
+
+          <div className="text-center md:text-left">
+
+            <h3 className="text-3xl font-bold text-white mb-2">
+              Carlos Bautista
+            </h3>
+
+            <p className="text-[#D4A017] uppercase tracking-[4px] text-sm">
+              Operations Manager
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      {/* CONNECTOR */}
+      <div className="hidden lg:block w-[2px] h-10 bg-[#D4A017]" />
+
+      {/* HORIZONTAL CONNECTOR */}
+      <div className="hidden lg:block w-[600px] h-[2px] bg-[#D4A017]" />
+
+      {/* STAFF */}
+      <div className="grid md:grid-cols-2 gap-8 mt-10 w-full max-w-5xl">
+
+        {/* RECRUITMENT OFFICER */}
+        <div className="bg-white/5 border border-white/10 rounded-3xl backdrop-blur-xl p-6">
+
+          <div className="flex flex-col md:flex-row items-center gap-5">
+
+            <img
+              src="/team/team3.jpg"
+              alt="Franciz Allen Antonio"
+              className="w-24 h-24 rounded-full object-cover border-4 border-[#D4A017]"
+            />
+
+            <div className="text-center md:text-left">
+
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Franciz Allen Antonio
+              </h3>
+
+              <p className="text-[#D4A017] uppercase tracking-[4px] text-sm">
+                Recruitment Officer
               </p>
-
-              <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                Meet The Professionals
-              </h2>
-
-              <div className="w-24 h-1 bg-[#D4A017] mx-auto rounded-full mb-8" />
-
-              <p className="max-w-3xl mx-auto text-gray-400 text-lg leading-relaxed">
-                Strategic International Manpower Services is powered by experienced
-                professionals dedicated to helping Filipino workers achieve successful
-                international careers.
-              </p>
-
-            </div>
-
-            {/* TEAM GRID */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-              {/* MEMBER 1 */}
-              <div className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl hover:border-[#D4A017]/40 transition-all duration-500 hover:-translate-y-2">
-
-                <div className="relative overflow-hidden">
-
-                  <img
-                    src="/team/bossjo.png"
-                    alt="Team Member"
-                    className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-
-                  <div className="absolute inset-0 bg-linear-to-t from-[#071426] via-transparent to-transparent" />
-
-                </div>
-
-                <div className="p-8">
-
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Jonathan Bertulfo
-                  </h3>
-
-                  <p className="text-[#D4A017] uppercase tracking-[3px] text-sm">
-                    Director
-                  </p>
-
-                </div>
-
-              </div>
-
-              {/* MEMBER 2 */}
-              <div className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl hover:border-[#D4A017]/40 transition-all duration-500 hover:-translate-y-2">
-
-                <div className="relative overflow-hidden">
-
-                  <img
-                    src="/team/sircarlos.png"
-                    alt="Team Member"
-                    className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-
-                  <div className="absolute inset-0 bg-linear-to-t from-[#071426] via-transparent to-transparent" />
-
-                </div>
-
-                <div className="p-8">
-
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Carlos Bautista
-                  </h3>
-
-                  <p className="text-[#D4A017] uppercase tracking-[3px] text-sm">
-                    Operations Manager
-                  </p>
-
-                </div>
-
-              </div>
-
-              {/* MEMBER 3 */}
-              <div className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl hover:border-[#D4A017]/40 transition-all duration-500 hover:-translate-y-2">
-
-                <div className="relative overflow-hidden">
-
-                  <img
-                    src="/team/team3.jpg"
-                    alt="Team Member"
-                    className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-
-                  <div className="absolute inset-0 bg-linear-to-t from-[#071426] via-transparent to-transparent" />
-
-                </div>
-
-                <div className="p-8">
-
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Franciz Allen Antonio
-                  </h3>
-
-                  <p className="text-[#D4A017] uppercase tracking-[3px] text-sm">
-                    
-                  </p>
-
-                </div>
-
-              </div>
-
-              {/* MEMBER 4 */}
-              <div className="group bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl hover:border-[#D4A017]/40 transition-all duration-500 hover:-translate-y-2">
-
-                <div className="relative overflow-hidden">
-
-                  <img
-                    src="/team/team4.jpg"
-                    alt="Team Member"
-                    className="w-full h-96 object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-
-                  <div className="absolute inset-0 bg-linear-to-t from-[#071426] via-transparent to-transparent" />
-
-                </div>
-
-                <div className="p-8">
-
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    Jean Sumbanan
-                  </h3>
-
-                  <p className="text-[#D4A017] uppercase tracking-[3px] text-sm">
-                    
-                  </p>
-
-                </div>
-
-              </div>
 
             </div>
 
           </div>
 
-        </section>
+        </div>
+
+        {/* DOCUMENTATION OFFICER */}
+        <div className="bg-white/5 border border-white/10 rounded-3xl backdrop-blur-xl p-6">
+
+          <div className="flex flex-col md:flex-row items-center gap-5">
+
+            <img
+              src="/team/team4.jpg"
+              alt="Jean Sumbanan"
+              className="w-24 h-24 rounded-full object-cover border-4 border-[#D4A017]"
+            />
+
+            <div className="text-center md:text-left">
+
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Jean Sumbanan
+              </h3>
+
+              <p className="text-[#D4A017] uppercase tracking-[4px] text-sm">
+                Documentation Officer
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
       </FadeUp>
 
