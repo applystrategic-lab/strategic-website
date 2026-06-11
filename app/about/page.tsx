@@ -253,7 +253,7 @@ export default function AboutPage() {
           <div className="flex flex-col md:flex-row items-center gap-5">
 
             <img
-              src="/team/frans.png"
+              src="/team/frans.PNG"
               alt="Franciz Allen Antonio"
               className="w-24 h-24 rounded-full object-cover border-4 border-[#D4A017]"
             />
