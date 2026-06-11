@@ -257,11 +257,11 @@ export default function AboutPage() {
                 <div className="p-8">
 
                   <h3 className="text-2xl font-bold text-white mb-2">
-                    Angela Cruz
+                    Franciz Allen Antonio
                   </h3>
 
                   <p className="text-[#D4A017] uppercase tracking-[3px] text-sm">
-                    HR Coordinator
+                    
                   </p>
 
                 </div>
@@ -286,11 +286,11 @@ export default function AboutPage() {
                 <div className="p-8">
 
                   <h3 className="text-2xl font-bold text-white mb-2">
-                    Michael Reyes
+                    Jean Sumbanan
                   </h3>
 
                   <p className="text-[#D4A017] uppercase tracking-[3px] text-sm">
-                    Overseas Placement Officer
+                    
                   </p>
 
                 </div>
