@@ -232,7 +232,7 @@ export default function AboutPage() {
                   </h3>
 
                   <p className="text-[#D4A017] uppercase tracking-[3px] text-sm">
-                    Documentation Officer
+                    Operations Manager
                   </p>
 
                 </div>
