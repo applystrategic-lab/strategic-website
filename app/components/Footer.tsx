@@ -63,7 +63,7 @@ export default function Footer() {
             <div className="flex gap-4">
 
               <a
-                href="#"
+                href="https://www.facebook.com/StrategicInternationalManpowerServices"
                 className="
                   w-11
                   h-11

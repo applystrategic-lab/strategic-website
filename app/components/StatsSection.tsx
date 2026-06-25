@@ -12,7 +12,7 @@ import {
 const stats = [
   {
     icon: Users,
-    number: "10,000+",
+    number: "5,000+",
     label: "Successful Deployments",
   },
   {

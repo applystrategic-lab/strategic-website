@@ -10,13 +10,13 @@ const stats = [
     label: "Years Experience",
   },
   {
-    number: 10000,
+    number: 5000,
     suffix: "+",
     label: "Applicants Deployed",
   },
   {
-    number: 15,
-    suffix: "+",
+    number: 11,
+    suffix: "",
     label: "Deployment Countries",
   },
   {

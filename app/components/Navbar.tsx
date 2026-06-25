@@ -23,6 +23,7 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
+    { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -123,7 +124,7 @@ export default function Navbar() {
             </Link>
 
             {/* DESKTOP NAV */}
-            <nav className="hidden lg:flex items-center gap-10 ml-auto pl-24">
+            <nav className="hidden lg:flex items-center gap-9 ml-auto pl-24">
 
               {navLinks.map((link) => (
                 <Link
@@ -178,7 +179,7 @@ export default function Navbar() {
                 "
               >
 
-                <span className="relative z-10">
+                <span className="relative z-9">
                   Apply Now
                 </span>
 

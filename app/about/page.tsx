@@ -161,151 +161,62 @@ export default function AboutPage() {
     <div className="text-center mb-20">
 
       <p className="text-[#D4A017] uppercase tracking-[5px] text-sm font-semibold mb-4">
-        Our Team
-      </p>
+        Leadership
+    </p>
 
       <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
-        Meet the Professionals
-      </h2>
+  Meet Our President
+</h2>
 
       <div className="w-24 h-1 bg-[#D4A017] mx-auto rounded-full mb-8" />
 
       <p className="max-w-3xl mx-auto text-gray-400 text-lg leading-relaxed">
-        Strategic International Manpower Services is powered by experienced
-        professionals dedicated to helping Filipino workers achieve successful
-        international careers.
-      </p>
+  Meet the visionary leader behind Strategic International Manpower Services
+  Inc., dedicated to creating opportunities and connecting Filipino talent
+  with employers around the world.
+</p>
 
     </div>
 
-    {/* ORGANIZATIONAL CHART */}
-    <div className="flex flex-col items-center">
+    {/* PRESIDENT SECTION */}
+<div className="flex justify-center">
 
-      {/* DIRECTOR */}
-      <div className="w-full max-w-2xl bg-white/5 border border-white/10 rounded-3xl backdrop-blur-xl p-6">
+  <div className="w-full max-w-4xl bg-white/5 border border-white/10 rounded-3xl backdrop-blur-xl p-8">
 
-        <div className="flex flex-col md:flex-row items-center gap-6">
+    <div className="flex flex-col md:flex-row items-center gap-8">
 
-          <img
-            src="/team/bossjo.png"
-            alt="Jonathan Bertulfo"
-            className="w-28 h-28 rounded-full object-cover border-4 border-[#D4A017]"
-          />
+      <img
+        src="/team/bossjo.png"
+        alt="Jonathan Bertulfo"
+        className="w-50 h-50 rounded-full object-cover border-4 border-[#D4A017]"
+      />
 
-          <div className="text-center md:text-left">
+      <div className="text-center md:text-left">
 
-            <h3 className="text-3xl font-bold text-white mb-2">
-              Jonathan Bertulfo
-            </h3>
+        <h3 className="text-4xl font-bold text-white mb-3">
+          Jonathan Bertulfo
+        </h3>
 
-            <p className="text-[#D4A017] uppercase tracking-[4px] text-sm">
-              Director
-            </p>
+        <p className="text-[#D4A017] uppercase tracking-[5px] text-lg mb-4">
+          President
+        </p>
 
-          </div>
-
-        </div>
-
-      </div>
-
-      {/* CONNECTOR */}
-      <div className="w-[2px] h-12 bg-[#D4A017]" />
-
-      {/* OPERATIONS MANAGER */}
-      <div className="w-full max-w-2xl bg-white/5 border border-white/10 rounded-3xl backdrop-blur-xl p-6">
-
-        <div className="flex flex-col md:flex-row items-center gap-6">
-
-          <img
-            src="/team/sircarlos.png"
-            alt="Carlos Bautista"
-            className="w-28 h-28 rounded-full object-cover border-4 border-[#D4A017]"
-          />
-
-          <div className="text-center md:text-left">
-
-            <h3 className="text-3xl font-bold text-white mb-2">
-              Carlos Bautista
-            </h3>
-
-            <p className="text-[#D4A017] uppercase tracking-[4px] text-sm">
-              Operations Manager
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-      {/* CONNECTOR */}
-      <div className="hidden lg:block w-[2px] h-10 bg-[#D4A017]" />
-
-      {/* HORIZONTAL CONNECTOR */}
-      <div className="hidden lg:block w-[600px] h-[2px] bg-[#D4A017]" />
-
-      {/* STAFF */}
-      <div className="grid md:grid-cols-2 gap-8 mt-10 w-full max-w-5xl">
-
-        {/* RECRUITMENT OFFICER */}
-        <div className="bg-white/5 border border-white/10 rounded-3xl backdrop-blur-xl p-6">
-
-          <div className="flex flex-col md:flex-row items-center gap-5">
-
-            <img
-              src="/team/frans.PNG"
-              alt="Franciz Allen Antonio"
-              className="w-24 h-24 rounded-full object-cover border-4 border-[#D4A017]"
-            />
-
-            <div className="text-center md:text-left">
-
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Franciz Allen Antonio
-              </h3>
-
-              <p className="text-[#D4A017] uppercase tracking-[4px] text-sm">
-                
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        {/* DOCUMENTATION OFFICER */}
-        <div className="bg-white/5 border border-white/10 rounded-3xl backdrop-blur-xl p-6">
-
-          <div className="flex flex-col md:flex-row items-center gap-5">
-
-            <img
-              src="/team/team4.jpg"
-              alt="Jean Sumbanan"
-              className="w-24 h-24 rounded-full object-cover border-4 border-[#D4A017]"
-            />
-
-            <div className="text-center md:text-left">
-
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Jean Sumbanan
-              </h3>
-
-              <p className="text-[#D4A017] uppercase tracking-[4px] text-sm">
-                
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
+        <p className="text-gray-300 text-lg leading-relaxed">
+          Jonathan Bertulfo leads Strategic International Manpower Services Inc.
+          with a commitment to excellence, integrity, and providing opportunities
+          for Filipino professionals seeking successful international careers.
+          Through years of industry experience, he continues to strengthen the
+          company’s reputation as a trusted partner in global workforce deployment.
+        </p>
 
       </div>
 
     </div>
 
   </div>
+
+</div>
+</div>
 
 </section>
 
