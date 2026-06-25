@@ -12,6 +12,9 @@ export async function POST(req) {
       message,
     } = body;
 
+    console.log(process.env.EMAIL_USER);
+    console.log(process.env.EMAIL_PASS);
+
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
