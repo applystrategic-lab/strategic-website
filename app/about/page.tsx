@@ -186,7 +186,7 @@ export default function AboutPage() {
     <div className="flex flex-col md:flex-row items-center gap-8">
 
       <img
-        src="/team/bossjo.png"
+        src="/team/bossjojo.png"
         alt="Jonathan Bertulfo"
         className="w-50 h-50 rounded-full object-cover border-4 border-[#D4A017]"
       />
