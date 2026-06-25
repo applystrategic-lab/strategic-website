@@ -130,40 +130,11 @@ export default function Hero() {
 
           {/* BUTTONS */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-5"
-          >
-
-            <Link
-              href="/jobs"
-              className="
-                group
-                relative
-                overflow-hidden
-                bg-[#D4A017]
-                hover:bg-[#b88a12]
-                text-white
-                px-8
-                py-4
-                rounded-xl
-                font-semibold
-                uppercase
-                tracking-[2px]
-                transition-all
-                duration-300
-                hover:scale-105
-                shadow-[0_10px_40px_rgba(212,160,23,0.35)]
-                hover:shadow-[0_15px_50px_rgba(212,160,23,0.45)]
-              "
-            >
-              <span className="relative z-10">
-                Explore Jobs
-              </span>
-
-              <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition duration-300" />
-            </Link>
+  initial={{ opacity: 0, y: 30 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.8 }}
+  className="flex"
+>
 
             <Link
               href="/contact"
