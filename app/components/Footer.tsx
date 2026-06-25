@@ -164,15 +164,6 @@ export default function Footer() {
 
               <li>
                 <Link
-                  href="/jobs"
-                  className="hover:text-[#D4A017] transition-all duration-300"
-                >
-                  Jobs
-                </Link>
-              </li>
-
-              <li>
-                <Link
                   href="/contact"
                   className="hover:text-[#D4A017] transition-all duration-300"
                 >
