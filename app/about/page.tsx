@@ -72,7 +72,7 @@ export default function AboutPage() {
                 <p>
                   An intrinsic advantage in tapping the Philippines manpower resources is the wide use of
                   English language in the country (it being the world's third largest English speaking nation)
-                  and a hig literacy rate of over 88%.
+                  and a high literacy rate of over 88%.
                 </p>
 
                 <p>
