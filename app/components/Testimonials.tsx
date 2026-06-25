@@ -95,7 +95,7 @@ export default function Testimonials() {
               </div>
 
               <h3 className="text-4xl font-bold text-white mb-2">
-                12+
+                11
               </h3>
 
               <p className="text-gray-400 uppercase tracking-[2px] text-sm">
