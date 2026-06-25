@@ -8,23 +8,26 @@ import { useState } from "react";
 export default function ApplyPage() {
 
   const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    country: "",
-    position: "",
-    experience: "",
-    resume: null,
-  });
+  fullName: "",
+  email: "",
+  phone: "",
+  country: "",
+  position: "",
+  experience: "",
+  message: "",
+  resume: null,
+  passport: null,
+});
 
   const [loading, setLoading] = useState(false);
 
   const [success, setSuccess] = useState(false);
 
 const handleChange = (
-  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  e: React.ChangeEvent<
+    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+  >
 ) => {
-
   const target = e.target as HTMLInputElement;
 
   setFormData({
@@ -33,7 +36,6 @@ const handleChange = (
       ? target.files[0]
       : target.value,
   });
-
 };
 
 const handleSubmit = async (
@@ -54,10 +56,15 @@ const handleSubmit = async (
     submitData.append("country", formData.country);
     submitData.append("position", formData.position);
     submitData.append("experience", formData.experience);
+    submitData.append("message", formData.message);
 
-    if (formData.resume) {
-      submitData.append("resume", formData.resume);
-    }
+if (formData.resume) {
+  submitData.append("resume", formData.resume);
+}
+
+if (formData.passport) {
+  submitData.append("passport", formData.passport);
+}
 
     const res = await fetch("/api/apply", {
       method: "POST",
@@ -72,15 +79,17 @@ const handleSubmit = async (
         setSuccess(false);
       }, 3000);
 
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        country: "",
-        position: "",
-        experience: "",
-        resume: null,
-      });
+   setFormData({
+  fullName: "",
+  email: "",
+  phone: "",
+  country: "",
+  position: "",
+  experience: "",
+  message: "",
+  resume: null,
+  passport: null,
+});
 
     } else {
 
@@ -190,25 +199,38 @@ const handleSubmit = async (
               className="w-full p-4 rounded-xl bg-white/10 border border-white/10 text-white placeholder-gray-300 outline-none focus:border-[#D4A017]"
             />
 
-            <input
-              type="text"
-              name="country"
-              value={formData.country}
-              onChange={handleChange}
-              placeholder="Preferred Country"
-              required
-              className="w-full p-4 rounded-xl bg-white/10 border border-white/10 text-white placeholder-gray-300 outline-none focus:border-[#D4A017]"
-            />
+            <select
+  name="country"
+  value={formData.country}
+  onChange={handleChange}
+  required
+  className="w-full p-4 rounded-xl bg-white/10 border border-white/10 text-white outline-none focus:border-[#D4A017]"
+>
+  <option value="" className="text-black">
+    Select Desired Country
+  </option>
+
+  <option value="Japan" className="text-black">Japan</option>
+  <option value="Saudi Arabia" className="text-black">Saudi Arabia</option>
+  <option value="USA" className="text-black">USA</option>
+  <option value="UAE" className="text-black">UAE</option>
+  <option value="Malaysia" className="text-black">Malaysia</option>
+  <option value="Vietnam" className="text-black">Vietnam</option>
+  <option value="Jordan" className="text-black">Jordan</option>
+  <option value="Qatar" className="text-black">Qatar</option>
+  <option value="Thailand" className="text-black">Thailand</option>
+  <option value="Bahrain" className="text-black">Bahrain</option>
+</select>
 
             <input
-              type="text"
-              name="position"
-              value={formData.position}
-              onChange={handleChange}
-              placeholder="Position Applied"
-              required
-              className="w-full p-4 rounded-xl bg-white/10 border border-white/10 text-white placeholder-gray-300 outline-none focus:border-[#D4A017]"
-            />
+  type="text"
+  name="position"
+  value={formData.position}
+  onChange={handleChange}
+  placeholder="Desired Position"
+  required
+  className="w-full p-4 rounded-xl bg-white/10 border border-white/10 text-white placeholder-gray-300 outline-none focus:border-[#D4A017]"
+/>
 
             <textarea
               rows={6}
@@ -219,6 +241,26 @@ const handleSubmit = async (
               required
               className="w-full p-4 rounded-xl bg-white/10 border border-white/10 text-white placeholder-gray-300 outline-none focus:border-[#D4A017]"
             />
+
+            <textarea
+  rows={5}
+  name="message"
+  value={formData.message}
+  onChange={handleChange}
+  placeholder="Message to Recruitment Team"
+  className="
+    w-full
+    p-4
+    rounded-xl
+    bg-white/10
+    border
+    border-white/10
+    text-white
+    placeholder-gray-300
+    outline-none
+    focus:border-[#D4A017]
+  "
+/>
 
            {/* RESUME UPLOAD */}
 <div>
@@ -231,8 +273,9 @@ const handleSubmit = async (
   </p>
 
   <input
-    type="file"
-    name="resume"
+  type="file"
+  name="resume"
+  onChange={handleChange}
     accept=".pdf,.doc,.docx"
     required
     className="
@@ -268,8 +311,9 @@ const handleSubmit = async (
   </p>
 
   <input
-    type="file"
-    name="passport"
+  type="file"
+  name="passport"
+  onChange={handleChange}
     accept=".jpg,.jpeg,.png"
     required
     className="
