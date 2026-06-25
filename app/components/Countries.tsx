@@ -237,32 +237,6 @@ export default function Countries() {
             ))}
 
           </div>
-
-          {/* BUTTON */}
-          <div className="flex justify-center mt-16">
-
-            <button
-              className="
-                bg-[#0B1F3A]
-                hover:bg-[#1E4E8C]
-                text-white
-                px-10
-                py-4
-                rounded-2xl
-                font-semibold
-                uppercase
-                tracking-[2px]
-                transition-all
-                duration-300
-                hover:scale-105
-                shadow-[0_10px_30px_rgba(11,31,58,0.2)]
-              "
-            >
-              View All Countries
-            </button>
-
-          </div>
-
         </div>
       </section>
     </FadeUp>
