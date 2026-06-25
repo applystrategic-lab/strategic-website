@@ -13,20 +13,8 @@ const countries = [
   {
     name: "Saudi Arabia",
     flag: "🇸🇦",
-    thanks: "شكراً لك",
-    romanized: "Shukran Lak",
-  },
-  {
-    name: "UAE",
-    flag: "🇦🇪",
-    thanks: "شكراً لك",
-    romanized: "Shukran Lak",
-  },
-  {
-    name: "Qatar",
-    flag: "🇶🇦",
-    thanks: "شكراً لك",
-    romanized: "Shukran Lak",
+    thanks: "شكراً",
+    romanized: "Shukran",
   },
   {
     name: "Australia",
@@ -35,22 +23,52 @@ const countries = [
     romanized: "English",
   },
   {
-    name: "Taiwan",
-    flag: "🇹🇼",
-    thanks: "謝謝你",
-    romanized: "Xièxiè Nǐ",
-  },
-  {
-    name: "Canada",
-    flag: "🇨🇦",
-    thanks: "Thank You!",
-    romanized: "English",
-  },
-  {
-    name: "USA",
+    name: "U.S.A",
     flag: "🇺🇸",
     thanks: "Thank You!",
     romanized: "English",
+  },
+  {
+    name: "U.A.E",
+    flag: "🇦🇪",
+    thanks: "شكراً",
+    romanized: "Shukran",
+  },
+  {
+    name: "Malaysia",
+    flag: "🇲🇾",
+    thanks: "Terima Kasih",
+    romanized: "Terima Kasih",
+  },
+  {
+    name: "Vietnam",
+    flag: "🇻🇳",
+    thanks: "Cảm ơn",
+    romanized: "Cam On",
+  },
+  {
+    name: "Jordan",
+    flag: "🇯🇴",
+    thanks: "شكراً",
+    romanized: "Shukran",
+  },
+  {
+    name: "Qatar",
+    flag: "🇶🇦",
+    thanks: "شكراً",
+    romanized: "Shukran",
+  },
+  {
+    name: "Thailand",
+    flag: "🇹🇭",
+    thanks: "ขอบคุณ",
+    romanized: "Khob Khun",
+  },
+  {
+    name: "Bahrain",
+    flag: "🇧🇭",
+    thanks: "شكراً",
+    romanized: "Shukran",
   },
 ];
 
