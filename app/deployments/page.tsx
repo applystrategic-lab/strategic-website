@@ -22,6 +22,9 @@ export default function DeploymentsPage() {
   "/gallery/deploy14.jpg",
   "/gallery/deploy15.jpg",
   "/gallery/deploy16.jpg",
+  "/gallery/deploy17.jpg",
+  "/gallery/deploy18.jpg",
+  "/gallery/deploy19.jpg",
 ];
 
   return (
