@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import BackToTop from "./components/BackToTop";
+import SplashScreen from "./components/SplashScreen";
 
 import {
   Inter,
@@ -17,12 +18,6 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
 });
 
-export const metadata: Metadata = {
-  title: "Strategic International Manpower Services Inc.",
-  description:
-    "Professional international recruitment and staffing solutions.",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,7 +28,13 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} antialiased`}
       >
+        {/* PREMIUM SPLASH SCREEN */}
+        <SplashScreen />
+
+        {/* WEBSITE */}
         {children}
+
+        {/* BACK TO TOP */}
         <BackToTop />
       </body>
     </html>
